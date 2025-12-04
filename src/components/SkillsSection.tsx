@@ -1,69 +1,151 @@
-import { Code, Database, Smartphone, Wrench, Users } from "lucide-react";
+import { Code } from "lucide-react";
+import { 
+  SiReact, SiNextdotjs, SiVuedotjs, SiLaravel, SiTailwindcss,
+  SiDjango, SiSpringboot, SiNodedotjs, SiDotnet,
+  SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiSupabase, SiAmazondynamodb,
+  SiKotlin, SiFlutter, SiSwift,
+  SiGithub, SiDocker, SiSwagger, SiPostman, SiFigma, SiAmazonwebservices
+} from "react-icons/si";
+import { Users, GitBranch, ClipboardList, Target } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Frontend",
     icon: Code,
-    skills: ["React", "Next.js", "Vue 3", "Blade", "TailwindCSS"]
+    gradient: "from-cyan-500 to-blue-500",
+    skills: [
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+      { name: "Vue 3", icon: SiVuedotjs, color: "#4FC08D" },
+      { name: "Laravel Blade", icon: SiLaravel, color: "#FF2D20" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" }
+    ]
   },
   {
     title: "Backend",
-    icon: Database,
-    skills: ["Laravel", "Django", "Spring Boot", "Node.js", "ASP.NET Core"]
+    icon: Code,
+    gradient: "from-purple-500 to-pink-500",
+    skills: [
+      { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+      { name: "Django", icon: SiDjango, color: "#092E20" },
+      { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+      { name: "ASP.NET Core", icon: SiDotnet, color: "#512BD4" }
+    ]
   },
   {
     title: "Bases de Datos",
-    icon: Database,
-    skills: ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Supabase", "DynamoDB"]
+    icon: Code,
+    gradient: "from-green-500 to-emerald-500",
+    skills: [
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "Supabase", icon: SiSupabase, color: "#3FCF8E" },
+      { name: "DynamoDB", icon: SiAmazondynamodb, color: "#4053D6" }
+    ]
   },
   {
     title: "Móvil",
-    icon: Smartphone,
-    skills: ["Kotlin", "Flutter", "SwiftUI", "Firebase"]
+    icon: Code,
+    gradient: "from-orange-500 to-red-500",
+    skills: [
+      { name: "Kotlin", icon: SiKotlin, color: "#7F52FF" },
+      { name: "Flutter", icon: SiFlutter, color: "#02569B" },
+      { name: "SwiftUI", icon: SiSwift, color: "#F05138" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" }
+    ]
   },
   {
     title: "Herramientas",
-    icon: Wrench,
-    skills: ["GitHub", "Docker", "Swagger", "Postman", "Figma", "AWS"]
+    icon: Code,
+    gradient: "from-blue-500 to-indigo-500",
+    skills: [
+      { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+      { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      { name: "Swagger", icon: SiSwagger, color: "#85EA2D" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+      { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+      { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" }
+    ]
   },
   {
     title: "Metodologías",
     icon: Users,
-    skills: ["Scrum", "Kanban", "Gestión de Proyectos", "Levantamiento de Requerimientos"]
+    gradient: "from-teal-500 to-cyan-500",
+    skills: [
+      { name: "Scrum", icon: GitBranch, color: "#0EA5E9" },
+      { name: "Kanban", icon: ClipboardList, color: "#8B5CF6" },
+      { name: "Gestión de Proyectos", icon: Target, color: "#10B981" },
+      { name: "Requerimientos", icon: ClipboardList, color: "#F59E0B" }
+    ]
   }
 ];
 
 const SkillsSection = () => {
   return (
-    <section className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Code className="w-8 h-8 text-primary" />
-            <h2 className="section-title mb-0">Habilidades Técnicas</h2>
+    <section className="py-24 px-6 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="floating-orb w-96 h-96 bg-primary/20 -top-48 -right-48" />
+        <div className="floating-orb w-64 h-64 bg-purple-500/10 bottom-0 -left-32" style={{ animationDelay: '2s' }} />
+      </div>
+
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="text-center mb-16 animate-slide-up">
+          <div className="inline-flex items-center justify-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center animate-pulse-glow">
+              <Code className="w-6 h-6 text-primary" />
+            </div>
           </div>
-          <p className="section-subtitle">Stack tecnológico y herramientas de desarrollo</p>
+          <h2 className="section-title">
+            <span className="gradient-text">Habilidades Técnicas</span>
+          </h2>
+          <p className="section-subtitle max-w-2xl mx-auto">
+            Stack tecnológico y herramientas de desarrollo que domino
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <div 
               key={index}
-              className="glass-card p-6 hover:border-primary/30 transition-all duration-300 group"
+              className="glass-card-glow p-6 group"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                  <category.icon className="w-5 h-5 text-primary" />
+              {/* Category Header */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="w-full h-full rounded-xl bg-card flex items-center justify-center">
+                    <category.icon className="w-5 h-5 text-foreground" />
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-foreground font-heading">{category.title}</h3>
+                <h3 className="text-xl font-bold text-foreground font-heading group-hover:text-primary transition-colors">
+                  {category.title}
+                </h3>
               </div>
               
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, i) => (
-                  <span key={i} className="tech-badge">
-                    {skill}
-                  </span>
-                ))}
+              {/* Skills Grid */}
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map((skill, i) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div 
+                      key={i} 
+                      className="icon-badge group/badge"
+                      style={{ animationDelay: `${(index * 100) + (i * 50)}ms` }}
+                    >
+                      <IconComponent 
+                        className="icon w-5 h-5 transition-all duration-300" 
+                        style={{ color: skill.color }}
+                      />
+                      <span className="text-sm font-medium text-foreground/90 group-hover/badge:text-foreground">
+                        {skill.name}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
