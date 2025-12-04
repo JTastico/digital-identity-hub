@@ -1,4 +1,4 @@
-import { Briefcase, Calendar, Star } from "lucide-react";
+import { Briefcase, Calendar, Star, ArrowRight } from "lucide-react";
 
 const experiences = [
   {
@@ -53,68 +53,98 @@ const experiences = [
 
 const ExperienceSection = () => {
   return (
-    <section className="py-20 px-6 bg-card/30">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Briefcase className="w-8 h-8 text-primary" />
-            <h2 className="section-title mb-0">Experiencia Profesional</h2>
+    <section className="py-24 px-6 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-card/30" />
+      
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="floating-orb w-72 h-72 bg-primary/5 top-20 -right-36" />
+        <div className="floating-orb w-64 h-64 bg-purple-500/5 bottom-20 -left-32" style={{ animationDelay: '3s' }} />
+      </div>
+
+      <div className="container mx-auto max-w-5xl relative z-10">
+        <div className="text-center mb-16 animate-slide-up">
+          <div className="inline-flex items-center justify-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/20 to-orange-500/20 flex items-center justify-center animate-pulse-glow">
+              <Briefcase className="w-6 h-6 text-primary" />
+            </div>
           </div>
-          <p className="section-subtitle">Proyectos destacados y roles de liderazgo</p>
+          <h2 className="section-title">
+            <span className="gradient-text">Experiencia Profesional</span>
+          </h2>
+          <p className="section-subtitle max-w-2xl mx-auto">Proyectos destacados y roles de liderazgo</p>
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent hidden md:block" />
+          {/* Timeline line with gradient */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-purple-500 to-primary/20 hidden md:block md:-translate-x-0.5" />
 
-          <div className="space-y-8">
+          <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div 
                 key={index}
                 className={`relative flex flex-col md:flex-row gap-8 ${
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 top-8 w-4 h-4 -ml-2 md:-ml-2 rounded-full bg-primary glow-box hidden md:block" />
+                {/* Timeline dot with pulse */}
+                <div className="absolute left-4 md:left-1/2 top-8 w-5 h-5 -ml-2.5 md:-ml-2.5 rounded-full bg-gradient-to-br from-primary to-cyan-400 hidden md:flex items-center justify-center z-10">
+                  <div className="w-2 h-2 rounded-full bg-background" />
+                  <div className="absolute inset-0 rounded-full animate-ping bg-primary/50" style={{ animationDuration: '2s' }} />
+                </div>
                 
-                {/* Content */}
-                <div className={`flex-1 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
-                  <div className="glass-card p-6 hover:border-primary/30 transition-all duration-300 group">
+                {/* Content Card */}
+                <div className={`flex-1 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
+                  <div className="glass-card-glow p-6 group shine-effect">
+                    {/* Header */}
                     <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <Star className="w-4 h-4 text-primary" />
-                          <h3 className="text-lg font-bold text-foreground font-heading">{exp.title}</h3>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2 flex-wrap">
+                          <Star className="w-4 h-4 text-primary animate-glow-pulse" />
+                          <h3 className="text-xl font-bold text-foreground font-heading group-hover:text-primary transition-colors">
+                            {exp.title}
+                          </h3>
                           {exp.current && (
-                            <span className="px-2 py-0.5 text-xs bg-primary/20 text-primary rounded-full">
+                            <span className="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-primary/20 to-green-500/20 text-primary rounded-full border border-primary/30 animate-pulse">
                               Actual
                             </span>
                           )}
                         </div>
-                        <p className="text-primary font-medium">{exp.project}</p>
+                        <p className="text-lg text-primary font-semibold">{exp.project}</p>
                         <p className="text-sm text-muted-foreground">{exp.company}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                      <Calendar className="w-4 h-4" />
+                    {/* Period */}
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-5 p-2 rounded-lg bg-secondary/30 w-fit">
+                      <Calendar className="w-4 h-4 text-primary" />
                       {exp.period}
                     </div>
 
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 mb-5">
                       {exp.tech.map((t, i) => (
-                        <span key={i} className="tech-badge text-xs">
+                        <span 
+                          key={i} 
+                          className="tech-badge text-xs"
+                          style={{ animationDelay: `${i * 50}ms` }}
+                        >
                           {t}
                         </span>
                       ))}
                     </div>
 
-                    <ul className="space-y-2">
+                    {/* Highlights */}
+                    <ul className="space-y-3">
                       {exp.highlights.map((h, i) => (
-                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          {h}
+                        <li 
+                          key={i} 
+                          className="text-sm text-muted-foreground flex items-start gap-3 group/item hover:text-foreground transition-colors"
+                        >
+                          <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
+                          <span>{h}</span>
                         </li>
                       ))}
                     </ul>

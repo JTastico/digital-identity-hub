@@ -1,51 +1,85 @@
-import { Mail, Phone, Linkedin, Github, QrCode } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, QrCode, Send, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://portfolio.lovable.app';
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(currentUrl)}&bgcolor=0a1628&color=0ea5e9&margin=10`;
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(currentUrl)}&bgcolor=0a1628&color=0ea5e9&margin=10&format=png`;
 
   return (
-    <section className="py-20 px-6 bg-card/30">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-12">
-          <h2 className="section-title">Contacto</h2>
-          <p className="section-subtitle">¡Conectemos y creemos algo increíble!</p>
+    <section className="py-24 px-6 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-card/50 via-background to-background" />
+      
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="floating-orb w-80 h-80 bg-primary/10 -top-40 -left-40" />
+        <div className="floating-orb w-96 h-96 bg-purple-500/5 -bottom-48 -right-48" style={{ animationDelay: '2s' }} />
+      </div>
+
+      <div className="container mx-auto max-w-5xl relative z-10">
+        <div className="text-center mb-16 animate-slide-up">
+          <div className="inline-flex items-center justify-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/20 to-green-500/20 flex items-center justify-center animate-bounce-subtle">
+              <Send className="w-6 h-6 text-primary" />
+            </div>
+          </div>
+          <h2 className="section-title">
+            <span className="gradient-text">Contacto</span>
+          </h2>
+          <p className="section-subtitle max-w-2xl mx-auto">¡Conectemos y creemos algo increíble juntos!</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
           {/* Contact Info */}
-          <div className="space-y-4">
+          <div className="space-y-5">
+            {/* Email Card */}
             <a 
               href="mailto:jamilturpoarocutipa@gmail.com"
-              className="glass-card p-4 flex items-center gap-4 hover:border-primary/30 transition-all duration-300 group"
+              className="glass-card-glow p-5 flex items-center gap-5 group shine-effect"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <Mail className="w-6 h-6 text-primary" />
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Mail className="w-7 h-7 text-primary group-hover:animate-bounce-subtle" />
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Email</p>
-                <p className="font-medium text-foreground">jamilturpoarocutipa@gmail.com</p>
+              <div className="flex-1">
+                <p className="text-sm text-muted-foreground mb-1">Email</p>
+                <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                  jamilturpoarocutipa@gmail.com
+                </p>
               </div>
             </a>
 
+            {/* Phone Card */}
             <a 
               href="tel:+51991010001"
-              className="glass-card p-4 flex items-center gap-4 hover:border-primary/30 transition-all duration-300 group"
+              className="glass-card-glow p-5 flex items-center gap-5 group shine-effect"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <Phone className="w-6 h-6 text-primary" />
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Phone className="w-7 h-7 text-green-400 group-hover:animate-bounce-subtle" />
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Teléfono</p>
-                <p className="font-medium text-foreground">+51 991010001</p>
+              <div className="flex-1">
+                <p className="text-sm text-muted-foreground mb-1">Teléfono</p>
+                <p className="font-semibold text-foreground group-hover:text-green-400 transition-colors">
+                  +51 991010001
+                </p>
               </div>
             </a>
 
+            {/* Location Card */}
+            <div className="glass-card p-5 flex items-center gap-5">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                <MapPin className="w-7 h-7 text-purple-400" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-muted-foreground mb-1">Ubicación</p>
+                <p className="font-semibold text-foreground">Arequipa, Perú</p>
+              </div>
+            </div>
+
+            {/* Social Buttons */}
             <div className="flex gap-4 pt-4">
               <Button
                 size="lg"
-                className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
+                className="flex-1 bg-gradient-to-r from-primary to-cyan-400 text-primary-foreground hover:opacity-90 font-semibold py-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_hsl(199_89%_48%/0.3)]"
                 asChild
               >
                 <a href="https://www.linkedin.com/in/turpojamil/" target="_blank" rel="noopener noreferrer">
@@ -56,7 +90,7 @@ const ContactSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="flex-1 border-border hover:bg-secondary hover:border-primary/30"
+                className="flex-1 border-border/50 hover:bg-secondary hover:border-primary/30 font-semibold py-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
                 asChild
               >
                 <a href="https://github.com/JTastico" target="_blank" rel="noopener noreferrer">
@@ -67,23 +101,43 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* QR Code */}
-          <div className="flex justify-center">
-            <div className="glass-card-elevated p-8 text-center">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <QrCode className="w-5 h-5 text-primary" />
-                <p className="font-medium text-foreground">Escanea para visitar</p>
+          {/* QR Code Card */}
+          <div className="flex justify-center items-center">
+            <div className="glass-card-elevated p-8 text-center group hover:scale-105 transition-all duration-500">
+              {/* Header */}
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center group-hover:animate-pulse-glow">
+                  <QrCode className="w-5 h-5 text-primary" />
+                </div>
+                <p className="font-bold text-lg text-foreground">Escanea para visitar</p>
               </div>
-              <div className="bg-background/50 p-4 rounded-xl inline-block">
-                <img 
-                  src={qrCodeUrl}
-                  alt="QR Code para la tarjeta digital"
-                  className="w-48 h-48 rounded-lg"
-                />
+
+              {/* QR Code Container */}
+              <div className="relative">
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* QR Code */}
+                <div className="relative bg-gradient-to-br from-background/80 to-card p-5 rounded-2xl border border-border/50 group-hover:border-primary/30 transition-colors">
+                  <img 
+                    src={qrCodeUrl}
+                    alt="QR Code para la tarjeta digital"
+                    className="w-52 h-52 rounded-xl mx-auto"
+                  />
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                Tarjeta Digital de Presentación
-              </p>
+
+              {/* Footer */}
+              <div className="mt-6 space-y-2">
+                <p className="text-sm font-medium text-primary">Tarjeta Digital de Presentación</p>
+                <p className="text-xs text-muted-foreground">Alta resolución • Acceso instantáneo</p>
+              </div>
+
+              {/* Decorative corners */}
+              <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-primary/30 rounded-tl-lg" />
+              <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-primary/30 rounded-tr-lg" />
+              <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-primary/30 rounded-bl-lg" />
+              <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-primary/30 rounded-br-lg" />
             </div>
           </div>
         </div>
