@@ -1,7 +1,11 @@
 import { Github, Linkedin, FileText, ChevronDown, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import profileImage from "@/assets/jamil-profile.png";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Premium Background */}
@@ -33,9 +37,11 @@ const HeroSection = () => {
             {/* Profile Container */}
             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-1 bg-gradient-to-br from-primary via-cyan-400 to-purple-500">
               <div className="w-full h-full rounded-full overflow-hidden bg-card">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 via-card to-purple-500/20 flex items-center justify-center">
-                  <span className="text-6xl md:text-7xl font-bold gradient-text font-heading">JT</span>
-                </div>
+                <img 
+                  src={profileImage} 
+                  alt="Jamil Raúl Turpo Arocutipa"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
 
@@ -72,6 +78,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap gap-4 justify-center animate-slide-up mt-4" style={{ animationDelay: '0.2s' }}>
             <Button
               size="lg"
+              onClick={() => navigate('/cv')}
               className="relative bg-gradient-to-r from-primary to-cyan-400 text-primary-foreground hover:opacity-90 font-semibold px-8 py-6 text-lg rounded-xl overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(199_89%_48%/0.4)]"
             >
               <span className="relative z-10 flex items-center">

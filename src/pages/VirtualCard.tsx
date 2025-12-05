@@ -12,6 +12,7 @@ import {
 } from "react-icons/si";
 import { QRCodeSVG } from "qrcode.react";
 import { Button } from "@/components/ui/button";
+import profileImage from "@/assets/jamil-profile.png";
 
 const techSkills = [
   { name: "React", icon: SiReact, color: "#61DAFB" },
@@ -87,8 +88,12 @@ const VirtualCard = () => {
                 
                 {/* Avatar */}
                 <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-primary to-purple-500 p-1 group-hover:scale-105 transition-transform duration-300">
-                  <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-3xl font-bold text-foreground font-heading">
-                    JT
+                  <div className="w-full h-full rounded-full overflow-hidden bg-card">
+                    <img 
+                      src={profileImage} 
+                      alt="Jamil Raúl Turpo Arocutipa"
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                 </div>
               </div>
