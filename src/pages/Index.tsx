@@ -1,25 +1,7 @@
-import HeroSection from "@/components/HeroSection";
-import ProfileSection from "@/components/ProfileSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import SkillsSection from "@/components/SkillsSection";
-import EducationSection from "@/components/EducationSection";
-import SoftSkillsSection from "@/components/SoftSkillsSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import LandingCard from "./LandingCard";
 
 const Index = () => {
-  return (
-    <main className="min-h-screen bg-background">
-      <HeroSection />
-      <ProfileSection />
-      <ExperienceSection />
-      <SkillsSection />
-      <EducationSection />
-      <SoftSkillsSection />
-      <ContactSection />
-      <Footer />
-    </main>
-  );
+  return <LandingCard />;
 };
 
 export default Index;
