@@ -73,11 +73,6 @@ const SoftSkillsSection = () => {
             </div>
             <div className="text-left">
               <p className="text-sm text-muted-foreground mb-1">Idiomas</p>
-              <div className="flex items-center gap-3">
-                <span className="font-bold text-foreground text-lg">Español</span>
-                <span className="text-muted-foreground">—</span>
-                <span className="text-primary font-semibold">Nativo</span>
-              </div>
               <div className="flex items-center gap-3 mt-1">
                 <span className="font-bold text-foreground text-lg">Inglés</span>
                 <span className="text-muted-foreground">—</span>

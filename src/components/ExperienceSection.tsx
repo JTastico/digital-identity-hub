@@ -1,5 +1,6 @@
 import { Briefcase, Calendar, Star, ArrowRight } from "lucide-react";
 
+// Datos ordenados cronológicamente (Antiguo -> Reciente)
 const experiences = [
   {
     title: "Desarrollador Backend",
@@ -8,23 +9,10 @@ const experiences = [
     tech: ["PHP", "Laravel", "MySQL"],
     period: "Abril 2024 – Agosto 2024",
     highlights: [
-      "Desarrollo de un sistema integral de gestión de riesgos",
-      "Implementación de flujos de validación y seguridad de datos",
-      "Coordinación con auditores internos y externos"
+      "Desarrollo de sistema integral de gestión",
+      "Validación y seguridad de datos",
+      "Coordinación con auditores"
     ]
-  },
-  {
-    title: "Líder de Proyecto",
-    project: "Dot's Go",
-    company: "Plataforma Web de Aprendizaje",
-    tech: ["React", "Node.js", "MongoDB", "Kanban"],
-    period: "Junio 2025 – Actualidad",
-    highlights: [
-      "Dirección de equipo multidisciplinario",
-      "Rediseño de arquitectura y dashboards interactivos",
-      "Integración de APIs y despliegue en entornos productivos"
-    ],
-    current: true
   },
   {
     title: "Desarrollador Full Stack",
@@ -33,9 +21,23 @@ const experiences = [
     tech: ["iOS", "SwiftUI", "Firebase"],
     period: "Junio 2025 – Agosto 2025",
     highlights: [
-      "Autenticación, perfiles y publicaciones dinámicas",
-      "Servicios en tiempo real y diseño enfocado en UX"
+      "Autenticación y perfiles dinámicos",
+      "Servicios en tiempo real (Chat/Feeds)",
+      "Diseño enfocado en UX móvil"
     ]
+  },
+  {
+    title: "Líder de Proyecto",
+    project: "Dot's Go",
+    company: "Plataforma Web de Aprendizaje",
+    tech: ["React", "Node.js", "MongoDB"],
+    period: "Junio 2025 – Actualidad",
+    highlights: [
+      "Dirección de equipo multidisciplinario",
+      "Arquitectura y dashboards interactivos",
+      "Integración de APIs RESTful"
+    ],
+    current: true
   },
   {
     title: "Líder de Proyecto",
@@ -44,118 +46,129 @@ const experiences = [
     tech: ["Gestión", "Análisis"],
     period: "Octubre 2025 – Noviembre 2025",
     highlights: [
-      "Asignación Estratégica de Fondos de Canon",
-      "Levantamiento de requerimientos y reuniones con clientes",
-      "Coordinación de mejoras y validación de entregables"
+      "Asignación de Fondos de Canon",
+      "Levantamiento de requerimientos",
+      "Validación de entregables finales"
+    ]
+  },
+  {
+    title: "Desarrollador .NET",
+    project: "Juanjo",
+    company: "Archery & Lenguage School",
+    tech: [".NET", "Clean Arch", "C#"],
+    period: "Septiembre 2024 – Diciembre 2024",
+    highlights: [
+      "Implementación de Arquitectura Hexagonal",
+      "Optimización del registro de alumnos",
+      "Automatización de gestión administrativa"
     ]
   }
 ];
 
 const ExperienceSection = () => {
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-card/30" />
+    <section className="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden bg-background">
+      {/* Background Decorativo */}
+      <div className="absolute inset-0 bg-gradient-to-r from-card/30 via-background to-card/30 opacity-50" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(var(--primary-rgb),0.1),transparent_50%)]" />
       
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="floating-orb w-72 h-72 bg-primary/5 top-20 -right-36" />
-        <div className="floating-orb w-64 h-64 bg-purple-500/5 bottom-20 -left-32" style={{ animationDelay: '3s' }} />
+      {/* Orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="floating-orb w-96 h-96 bg-primary/5 -top-20 -left-20" />
+        <div className="floating-orb w-80 h-80 bg-purple-500/5 bottom-0 right-0" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto max-w-5xl relative z-10">
-        <div className="text-center mb-16 animate-slide-up">
+      <div className="container mx-auto relative z-10">
+        
+        {/* Encabezado */}
+        <div className="text-center mb-12 animate-slide-up">
           <div className="inline-flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/20 to-orange-500/20 flex items-center justify-center animate-pulse-glow">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center animate-pulse-glow border border-primary/20">
               <Briefcase className="w-6 h-6 text-primary" />
             </div>
           </div>
-          <h2 className="section-title">
-            <span className="gradient-text">Experiencia Profesional</span>
+          <h2 className="section-title mb-4">
+            <span className="gradient-text text-3xl md:text-4xl font-bold">Trayectoria Profesional</span>
           </h2>
-          <p className="section-subtitle max-w-2xl mx-auto">Proyectos destacados y roles de liderazgo</p>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
+            Proyectos destacados y roles desempeñados cronológicamente.
+          </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline line with gradient */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-purple-500 to-primary/20 hidden md:block md:-translate-x-0.5" />
-
-          <div className="space-y-12">
+        {/* Contenedor de Grilla */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            
             {experiences.map((exp, index) => (
               <div 
                 key={index}
-                className={`relative flex flex-col md:flex-row gap-8 ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
+                className="relative w-full group animate-slide-up"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Timeline dot with pulse */}
-                <div className="absolute left-4 md:left-1/2 top-8 w-5 h-5 -ml-2.5 md:-ml-2.5 rounded-full bg-gradient-to-br from-primary to-cyan-400 hidden md:flex items-center justify-center z-10">
-                  <div className="w-2 h-2 rounded-full bg-background" />
-                  <div className="absolute inset-0 rounded-full animate-ping bg-primary/50" style={{ animationDuration: '2s' }} />
-                </div>
-                
-                {/* Content Card */}
-                <div className={`flex-1 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="glass-card-glow p-6 group shine-effect">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2 flex-wrap">
-                          <Star className="w-4 h-4 text-primary animate-glow-pulse" />
-                          <h3 className="text-xl font-bold text-foreground font-heading group-hover:text-primary transition-colors">
-                            {exp.title}
-                          </h3>
-                          {exp.current && (
-                            <span className="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-primary/20 to-green-500/20 text-primary rounded-full border border-primary/30 animate-pulse">
-                              Actual
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-lg text-primary font-semibold">{exp.project}</p>
-                        <p className="text-sm text-muted-foreground">{exp.company}</p>
-                      </div>
+                {/* Card */}
+                <div className="h-full glass-card-elevated p-5 md:p-6 rounded-2xl border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 bg-card/40 backdrop-blur-md flex flex-col">
+                  
+                  {/* Fecha (Badge) - CORREGIDO: Relativo en móvil, Absoluto en Desktop */}
+                  <div className="mb-3 md:mb-0 md:absolute md:top-6 md:right-6 w-fit">
+                    <div className="bg-secondary/90 backdrop-blur text-[10px] md:text-xs font-mono py-1 px-3 rounded-full border border-white/10 shadow-lg flex items-center gap-2">
+                        <Calendar className="w-3 h-3 text-primary" />
+                        {exp.period}
                     </div>
-
-                    {/* Period */}
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-5 p-2 rounded-lg bg-secondary/30 w-fit">
-                      <Calendar className="w-4 h-4 text-primary" />
-                      {exp.period}
-                    </div>
-
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      {exp.tech.map((t, i) => (
-                        <span 
-                          key={i} 
-                          className="tech-badge text-xs"
-                          style={{ animationDelay: `${i * 50}ms` }}
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Highlights */}
-                    <ul className="space-y-3">
-                      {exp.highlights.map((h, i) => (
-                        <li 
-                          key={i} 
-                          className="text-sm text-muted-foreground flex items-start gap-3 group/item hover:text-foreground transition-colors"
-                        >
-                          <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-                </div>
 
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block flex-1" />
+                  {/* Header Card */}
+                  <div className="mb-4 mt-1 flex-grow">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Star className="w-4 h-4 text-yellow-500 fill-yellow-500/20 flex-shrink-0" />
+                      {/* Título: Permite wrap en móvil */}
+                      <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                        {exp.title}
+                      </h3>
+                    </div>
+                    
+                    <div className="flex flex-col md:justify-between md:items-start gap-1">
+                        <div className="w-full">
+                            {/* Proyecto: Texto completo en móvil */}
+                            <p className="text-base font-semibold text-primary/90 md:line-clamp-1 leading-snug">{exp.project}</p>
+                            <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">{exp.company}</p>
+                        </div>
+                        
+                        {exp.current && (
+                            <div className="flex items-center gap-2 mt-2 md:mt-1 md:absolute md:right-6 md:top-16">
+                                <span className="flex h-2.5 w-2.5 relative">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                </span>
+                                <span className="text-[10px] text-green-400 font-medium md:hidden">Actualmente</span>
+                            </div>
+                        )}
+                    </div>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {exp.tech.map((t, i) => (
+                      <span 
+                        key={i} 
+                        className="px-2.5 py-1 text-[10px] font-medium rounded-md bg-primary/10 text-primary border border-primary/20 whitespace-nowrap"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Highlights */}
+                  <div className="space-y-2 border-t border-white/5 pt-4 mt-auto">
+                    {exp.highlights.map((h, i) => (
+                      <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <ArrowRight className="w-3.5 h-3.5 text-primary/50 mt-1 flex-shrink-0" />
+                        <span className="leading-relaxed text-xs md:text-sm">{h}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                </div>
               </div>
             ))}
-          </div>
         </div>
       </div>
     </section>
