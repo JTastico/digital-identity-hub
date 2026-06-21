@@ -1,6 +1,31 @@
-import { User, Code, Briefcase, Zap, Target, Rocket } from "lucide-react";
+import { User, Code, Briefcase, Target, Rocket } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ProfileSection = () => {
+  const { t } = useLanguage();
+
+  // Reconstruimos el array de stats usando las traducciones
+  const stats = [
+    { 
+      icon: Code, 
+      title: t.profile.stats.fullstack.title, 
+      subtitle: t.profile.stats.fullstack.subtitle, 
+      color: "from-cyan-500 to-blue-500" 
+    },
+    { 
+      icon: Briefcase, 
+      title: t.profile.stats.leader.title, 
+      subtitle: t.profile.stats.leader.subtitle, 
+      color: "from-purple-500 to-pink-500" 
+    },
+    { 
+      icon: Target, 
+      title: t.profile.stats.agile.title, 
+      subtitle: t.profile.stats.agile.subtitle, 
+      color: "from-orange-500 to-red-500" 
+    },
+  ];
+
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       {/* Background decorations */}
@@ -18,9 +43,9 @@ const ProfileSection = () => {
             </div>
             <div>
               <h2 className="section-title mb-0">
-                <span className="gradient-text">Perfil Profesional</span>
+                <span className="gradient-text">{t.profile.title}</span>
               </h2>
-              <p className="text-sm text-muted-foreground">Sobre mí</p>
+              <p className="text-sm text-muted-foreground">{t.profile.subtitle}</p>
             </div>
           </div>
           
@@ -28,17 +53,13 @@ const ProfileSection = () => {
           <div className="relative pl-6 border-l-2 border-gradient-to-b from-primary to-purple-500">
             <div className="absolute left-0 top-0 w-2 h-full bg-gradient-to-b from-primary via-cyan-400 to-purple-500 -ml-0.5 rounded-full" />
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Profesional en <span className="text-foreground font-semibold">Diseño y Desarrollo de Software</span> con experiencia en aplicaciones web, sistemas empresariales y desarrollo móvil multiplataforma (Android e iOS). Especializado en <span className="text-primary font-semibold">desarrollo Full Stack</span> y <span className="text-primary font-semibold">gestión de proyectos tecnológicos</span>. He liderado proyectos completos desde la planificación hasta la entrega, asegurando calidad, escalabilidad y cumplimiento de plazos. También cuento con experiencia coordinando equipos, gestionando requerimientos y aplicando metodologías ágiles como <span className="text-foreground font-semibold">Scrum y Kanban</span>.
+              {t.profile.description}
             </p>
           </div>
 
           {/* Quick stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 pt-10 border-t border-border/30">
-            {[
-              { icon: Code, title: "Full Stack", subtitle: "Desarrollo", color: "from-cyan-500 to-blue-500" },
-              { icon: Briefcase, title: "Líder", subtitle: "Proyectos", color: "from-purple-500 to-pink-500" },
-              { icon: Target, title: "Ágil", subtitle: "Metodologías", color: "from-orange-500 to-red-500" },
-            ].map((stat, index) => (
+            {stats.map((stat, index) => (
               <div 
                 key={index}
                 className="text-center group cursor-pointer"

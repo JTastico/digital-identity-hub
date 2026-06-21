@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, ArrowRight, Sparkles, Mail, Phone, Link as LinkIcon } from "lucide-react";
+import { Github, Linkedin, ArrowRight, Sparkles, Mail, Phone, Link as LinkIcon, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import profileImage from "@/assets/jamil-profile.png";
+import { useLanguage } from "@/context/LanguageContext";
 
 const LandingCard = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
+  const { t, language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -20,6 +22,19 @@ const LandingCard = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,rgba(56,189,248,0.15),transparent_60%)]" />
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(168,85,247,0.15),transparent_60%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      </div>
+
+      {/* Language Toggle (Floating Top Right) */}
+      <div className="absolute top-4 right-4 z-50">
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          onClick={toggleLanguage}
+          className="text-slate-400 hover:text-white hover:bg-white/10 rounded-full border border-white/5 font-mono text-xs backdrop-blur-sm"
+        >
+            <Globe className="w-3 h-3 mr-2" />
+            {language}
+        </Button>
       </div>
 
       {/* --- TARJETA PRINCIPAL (Horizontal) --- */}
@@ -63,26 +78,26 @@ const LandingCard = () => {
               {/* Info Principal */}
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-2 tracking-tight">
-                  Jamil Raúl <br className="hidden md:block" />
+                  {t.landing.greeting} <br className="hidden md:block" />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
                     Turpo Arocutipa
                   </span>
                 </h1>
                 <p className="text-lg text-slate-400 font-medium">
-                  Desarrollador Full Stack & Gestor de Proyectos
+                  {t.landing.role}
                 </p>
               </div>
 
               {/* Caja de Contacto */}
               <div className="bg-[#151725] rounded-2xl p-6 border border-white/5 shadow-inner space-y-4">
                 <a 
-                  href="mailto:jamilturpoarocutipa@gmail.com"
+                  href={`mailto:${t.landing.email}`}
                   className="flex items-center gap-4 group p-2 rounded-xl hover:bg-white/5 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <span className="text-slate-300 text-sm md:text-base truncate">jamilturpoarocutipa@gmail.com</span>
+                  <span className="text-slate-300 text-sm md:text-base truncate">{t.landing.email}</span>
                 </a>
                 
                 <div className="h-px bg-white/5 w-full mx-auto" />
@@ -128,7 +143,7 @@ const LandingCard = () => {
                   className="w-full xl:w-auto bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl px-8 py-6 font-semibold shadow-[0_0_20px_rgba(6,182,212,0.3)] group border-none"
                 >
                   <span className="flex items-center gap-2">
-                    Ver Portafolio
+                    {t.landing.viewPortfolio}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>

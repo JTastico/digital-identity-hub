@@ -1,9 +1,12 @@
 import { Mail, Phone, Linkedin, Github, QrCode, Send, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ContactSection = () => {
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://portfolio.lovable.app';
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(currentUrl)}&bgcolor=0a1628&color=0ea5e9&margin=10&format=png`;
+  const { t } = useLanguage();
+  // URL fija solicitada para el QR
+  const portfolioUrl = "http://jamilturpo.entiendepiu.com/";
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(portfolioUrl)}&bgcolor=0a1628&color=0ea5e9&margin=10&format=png`;
 
   return (
     <section className="py-24 px-6 relative overflow-hidden">
@@ -24,9 +27,9 @@ const ContactSection = () => {
             </div>
           </div>
           <h2 className="section-title">
-            <span className="gradient-text">Contacto</span>
+            <span className="gradient-text">{t.contact.title}</span>
           </h2>
-          <p className="section-subtitle max-w-2xl mx-auto">¡Conectemos y creemos algo increíble juntos!</p>
+          <p className="section-subtitle max-w-2xl mx-auto">{t.contact.subtitle}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 items-stretch">
@@ -34,16 +37,16 @@ const ContactSection = () => {
           <div className="space-y-5">
             {/* Email Card */}
             <a 
-              href="mailto:jamilturpoarocutipa@gmail.com"
+              href={`mailto:${t.landing.email}`}
               className="glass-card-glow p-5 flex items-center gap-5 group shine-effect"
             >
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Mail className="w-7 h-7 text-primary group-hover:animate-bounce-subtle" />
               </div>
               <div className="flex-1">
-                <p className="text-sm text-muted-foreground mb-1">Email</p>
+                <p className="text-sm text-muted-foreground mb-1">{t.contact.email}</p>
                 <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                  jamilturpoarocutipa@gmail.com
+                  {t.landing.email}
                 </p>
               </div>
             </a>
@@ -57,7 +60,7 @@ const ContactSection = () => {
                 <Phone className="w-7 h-7 text-green-400 group-hover:animate-bounce-subtle" />
               </div>
               <div className="flex-1">
-                <p className="text-sm text-muted-foreground mb-1">Teléfono</p>
+                <p className="text-sm text-muted-foreground mb-1">{t.contact.phone}</p>
                 <p className="font-semibold text-foreground group-hover:text-green-400 transition-colors">
                   +51 991010001
                 </p>
@@ -70,8 +73,8 @@ const ContactSection = () => {
                 <MapPin className="w-7 h-7 text-purple-400" />
               </div>
               <div className="flex-1">
-                <p className="text-sm text-muted-foreground mb-1">Ubicación</p>
-                <p className="font-semibold text-foreground">Arequipa, Perú</p>
+                <p className="text-sm text-muted-foreground mb-1">{t.contact.location}</p>
+                <p className="font-semibold text-foreground">{t.contact.locationValue}</p>
               </div>
             </div>
 
@@ -84,7 +87,7 @@ const ContactSection = () => {
               >
                 <a href="https://www.linkedin.com/in/turpojamil/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5 mr-2" />
-                  LinkedIn
+                  {t.hero.linkedIn}
                 </a>
               </Button>
               <Button
@@ -95,7 +98,7 @@ const ContactSection = () => {
               >
                 <a href="https://github.com/JTastico" target="_blank" rel="noopener noreferrer">
                   <Github className="w-5 h-5 mr-2" />
-                  GitHub
+                  {t.hero.github}
                 </a>
               </Button>
             </div>
@@ -109,7 +112,7 @@ const ContactSection = () => {
                 <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center group-hover:animate-pulse-glow">
                   <QrCode className="w-5 h-5 text-primary" />
                 </div>
-                <p className="font-bold text-lg text-foreground">Escanea para visitar</p>
+                <p className="font-bold text-lg text-foreground">{t.contact.scanMe}</p>
               </div>
 
               {/* QR Code Container */}
@@ -129,7 +132,7 @@ const ContactSection = () => {
 
               {/* Footer */}
               <div className="mt-6 space-y-2">
-                <p className="text-sm font-medium text-primary">Tarjeta Digital de Presentación</p>
+                <p className="text-sm font-medium text-primary">{t.contact.cardTitle}</p>
                 <p className="text-xs text-muted-foreground">Alta resolución • Acceso instantáneo</p>
               </div>
 
