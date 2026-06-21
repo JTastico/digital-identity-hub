@@ -1,6 +1,6 @@
 import {
-  Github, Star, Users, FolderGit2, ExternalLink,
-  Activity, Trophy, MapPin, Building2
+  Github, FolderGit2, ExternalLink,
+  Activity, MapPin, Building2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
@@ -18,14 +18,6 @@ const GitHubSection = () => {
   const stats = [
     { value: "73", label: gh.statsLabels.repos, note: "", icon: FolderGit2, color: "from-cyan-500 to-blue-500" },
     { value: "329", label: gh.statsLabels.contributions, note: gh.statsLabels.contributionsNote, icon: Activity, color: "from-green-500 to-emerald-500" },
-    { value: "1", label: gh.statsLabels.stars, note: "", icon: Star, color: "from-yellow-500 to-orange-500" },
-    { value: "1", label: gh.statsLabels.following, note: "", icon: Users, color: "from-purple-500 to-pink-500" },
-  ];
-
-  const achievements = [
-    { name: "Pull Shark", emoji: "🦈" },
-    { name: "YOLO", emoji: "🎯" },
-    { name: "Quickdraw", emoji: "⚡" },
   ];
 
   // Metadata de repos alineada por índice con gh.repos (mismo orden).
@@ -124,17 +116,16 @@ const GitHubSection = () => {
           </div>
         </div>
 
-        {/* About + Achievements */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {/* About */}
-          <div className="glass-card-glow p-6 animate-slide-up">
+        {/* About */}
+        <div className="mb-8 animate-slide-up">
+          <div className="glass-card-glow p-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-cyan-500/20 flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-lg font-bold text-foreground font-heading">{gh.aboutTitle}</h3>
             </div>
-            <ul className="space-y-3">
+            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
               {gh.about.map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -142,27 +133,6 @@ const GitHubSection = () => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Achievements */}
-          <div className="glass-card-glow p-6 animate-slide-up" style={{ animationDelay: '150ms' }}>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center">
-                <Trophy className="w-5 h-5 text-yellow-400" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground font-heading">{gh.achievementsTitle}</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {achievements.map((a, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/60 border border-border/40 hover:border-primary/40 hover:-translate-y-0.5 transition-all"
-                >
-                  <span className="text-xl">{a.emoji}</span>
-                  <span className="text-sm font-semibold text-foreground">{a.name}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 

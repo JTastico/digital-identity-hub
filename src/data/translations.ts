@@ -28,7 +28,7 @@ export const translations = {
     profile: {
       title: "Perfil Profesional",
       subtitle: "Sobre mí",
-      description: "Profesional en Diseño y Desarrollo de Software con experiencia en aplicaciones web, sistemas empresariales y desarrollo móvil multiplataforma (Android e iOS). Especializado en desarrollo Full Stack y gestión de proyectos tecnológicos. He liderado proyectos completos desde la planificación hasta la entrega, asegurando calidad, escalabilidad y cumplimiento de plazos. También cuento con experiencia coordinando equipos, gestionando requerimientos y aplicando metodologías ágiles como Scrum y Kanban.",
+      description: "Profesional en Diseño y Desarrollo de Software, especializado en desarrollo Full Stack y gestión de proyectos tecnológicos. Lidero proyectos de principio a fin —web, sistemas empresariales y móvil multiplataforma— asegurando calidad y cumplimiento de plazos con metodologías ágiles como Scrum y Kanban.",
       stats: {
         fullstack: { title: "Full Stack", subtitle: "Desarrollo" },
         leader: { title: "Líder", subtitle: "Proyectos" },
@@ -37,14 +37,51 @@ export const translations = {
     },
     experience: {
       title: "Trayectoria Profesional",
-      subtitle: "Proyectos destacados y roles desempeñados cronológicamente.",
+      subtitle: "Proyectos destacados agrupados por especialidad",
       current: "Actualmente",
       items: [
+        {
+          title: "Desarrollador Full Stack",
+          project: "CodeLink",
+          company: "Red Social para Desarrolladores",
+          period: "Junio 2025 – Agosto 2025",
+          images: ["/codelink/content.png", "/codelink/login.png"],
+          highlights: [
+            "Autenticación y perfiles dinámicos",
+            "Servicios en tiempo real (Chat/Feeds)",
+            "Diseño enfocado en UX móvil"
+          ]
+        },
+        {
+          title: "Desarrollador Backend",
+          project: "Sistema de Gestión de Riesgos",
+          company: "Laboratorios La Cooper",
+          period: "Abril 2024 – Agosto 2024",
+          images: [],
+          highlights: [
+            "Desarrollo de sistema integral de gestión de riesgos",
+            "Implementación de flujos de validación y seguridad de datos",
+            "Coordinación con auditores internos y externos"
+          ]
+        },
+        {
+          title: "Desarrollador .NET",
+          project: "Juanjo",
+          company: "Archery & Lenguage School",
+          period: "Septiembre 2024 – Diciembre 2024",
+          images: [],
+          highlights: [
+            "Implementación de Arquitectura Hexagonal",
+            "Optimización del registro de alumnos",
+            "Automatización de gestión administrativa"
+          ]
+        },
         {
           title: "Líder de Proyecto",
           project: "Dot's Go - Plataforma Web de Aprendizaje",
           company: "Proyecto Académico",
           period: "Junio 2025 – Actualidad",
+          images: [],
           highlights: [
             "Dirección de equipo multidisciplinario",
             "Rediseño de arquitectura y dashboards interactivos",
@@ -57,43 +94,11 @@ export const translations = {
           project: "Rueda de Problemas",
           company: "OCEAN S.R.L",
           period: "Octubre 2025 – Noviembre 2025",
+          images: [],
           highlights: [
             "Asignación de Fondos de Canon",
             "Levantamiento de requerimientos y reuniones con clientes",
             "Validación de entregables finales"
-          ]
-        },
-        {
-          title: "Desarrollador .NET",
-          project: "Juanjo",
-          company: "Archery & Lenguage School",
-          period: "Septiembre 2024 – Diciembre 2024",
-          highlights: [
-            "Implementación de Arquitectura Hexagonal",
-            "Optimización del registro de alumnos",
-            "Automatización de gestión administrativa"
-          ]
-        },
-        {
-          title: "Desarrollador Full Stack",
-          project: "CodeLink",
-          company: "Red Social para Desarrolladores",
-          period: "Junio 2025 – Agosto 2025",
-          highlights: [
-            "Autenticación y perfiles dinámicos",
-            "Servicios en tiempo real (Chat/Feeds)",
-            "Diseño enfocado en UX móvil"
-          ]
-        },
-        {
-          title: "Desarrollador Backend",
-          project: "Sistema de Gestión de Riesgos",
-          company: "Laboratorios La Cooper",
-          period: "Abril 2024 – Agosto 2024",
-          highlights: [
-            "Desarrollo de sistema integral de gestión de riesgos",
-            "Implementación de flujos de validación y seguridad de datos",
-            "Coordinación con auditores internos y externos"
           ]
         }
       ]
@@ -161,9 +166,7 @@ export const translations = {
       email: "Email",
       phone: "Teléfono",
       location: "Ubicación",
-      locationValue: "Arequipa, Perú",
-      scanMe: "Escanea para visitar",
-      cardTitle: "Tarjeta Digital de Presentación"
+      locationValue: "Arequipa, Perú"
     },
     footer: {
       tagline: "Full Stack Developer • Project Manager",
@@ -179,9 +182,7 @@ export const translations = {
       statsLabels: {
         repos: "Repositorios",
         contributions: "Contribuciones",
-        contributionsNote: "último año",
-        stars: "Estrellas",
-        following: "Siguiendo"
+        contributionsNote: "último año"
       },
       aboutTitle: "Sobre mí",
       about: [
@@ -190,7 +191,6 @@ export const translations = {
         "Siempre aprendiendo nuevos frameworks, lenguajes y herramientas",
         "Gamer de corazón y entusiasta de la tecnología"
       ],
-      achievementsTitle: "Logros de GitHub",
       reposTitle: "Repositorios destacados",
       repos: [
         { name: "CodeLink", desc: "Red social para desarrolladores" },
@@ -222,7 +222,7 @@ export const translations = {
     profile: {
       title: "Professional Profile",
       subtitle: "About me",
-      description: "Professional in Software Design and Development with experience in web applications, enterprise systems, and multi-platform mobile development (Android and iOS). Specialized in Full Stack development and technology project management. I have led complete projects from planning to delivery, ensuring quality, scalability, and deadline compliance. I also have experience coordinating teams, managing requirements, and applying agile methodologies like Scrum and Kanban.",
+      description: "Software Design and Development professional, specialized in Full Stack development and technology project management. I lead projects end to end —web, enterprise systems, and cross-platform mobile— ensuring quality and on-time delivery with agile methodologies like Scrum and Kanban.",
       stats: {
         fullstack: { title: "Full Stack", subtitle: "Development" },
         leader: { title: "Leader", subtitle: "Projects" },
@@ -231,14 +231,51 @@ export const translations = {
     },
     experience: {
       title: "Professional Trajectory",
-      subtitle: "Featured projects and roles performed chronologically.",
+      subtitle: "Featured projects grouped by specialty",
       current: "Currently",
       items: [
+        {
+          title: "Full Stack Developer",
+          project: "CodeLink",
+          company: "Social Network for Developers",
+          period: "June 2025 – August 2025",
+          images: ["/codelink/content.png", "/codelink/login.png"],
+          highlights: [
+            "Authentication and dynamic profiles",
+            "Real-time services (Chat/Feeds)",
+            "Mobile UX focused design"
+          ]
+        },
+        {
+          title: "Backend Developer",
+          project: "Risk Management System",
+          company: "Laboratorios La Cooper",
+          period: "April 2024 – August 2024",
+          images: [],
+          highlights: [
+            "Development of comprehensive risk management system",
+            "Implementation of data validation and security flows",
+            "Coordination with internal and external auditors"
+          ]
+        },
+        {
+          title: ".NET Developer",
+          project: "Juanjo",
+          company: "Archery & Lenguage School",
+          period: "September 2024 – December 2024",
+          images: [],
+          highlights: [
+            "Implementation of Hexagonal Architecture",
+            "Optimization of student registration",
+            "Automation of administrative management"
+          ]
+        },
         {
           title: "Project Lead",
           project: "Dot's Go - Web Learning Platform",
           company: "Academic Project",
           period: "June 2025 – Present",
+          images: [],
           highlights: [
             "Leading a multidisciplinary team",
             "Redesigning architecture and interactive dashboards",
@@ -251,43 +288,11 @@ export const translations = {
           project: "Problem Wheel",
           company: "OCEAN S.R.L",
           period: "October 2025 – November 2025",
+          images: [],
           highlights: [
             "Canon Fund Allocation Strategy",
             "Requirements gathering and client meetings",
             "Validation of final deliverables"
-          ]
-        },
-        {
-          title: ".NET Developer",
-          project: "Juanjo",
-          company: "Archery & Lenguage School",
-          period: "September 2024 – December 2024",
-          highlights: [
-            "Implementation of Hexagonal Architecture",
-            "Optimization of student registration",
-            "Automation of administrative management"
-          ]
-        },
-        {
-          title: "Full Stack Developer",
-          project: "CodeLink",
-          company: "Social Network for Developers",
-          period: "June 2025 – August 2025",
-          highlights: [
-            "Authentication and dynamic profiles",
-            "Real-time services (Chat/Feeds)",
-            "Mobile UX focused design"
-          ]
-        },
-        {
-          title: "Backend Developer",
-          project: "Risk Management System",
-          company: "Laboratorios La Cooper",
-          period: "April 2024 – August 2024",
-          highlights: [
-            "Development of comprehensive risk management system",
-            "Implementation of data validation and security flows",
-            "Coordination with internal and external auditors"
           ]
         }
       ]
@@ -355,9 +360,7 @@ export const translations = {
       email: "Email",
       phone: "Phone",
       location: "Location",
-      locationValue: "Arequipa, Peru",
-      scanMe: "Scan to visit",
-      cardTitle: "Digital Business Card"
+      locationValue: "Arequipa, Peru"
     },
     footer: {
       tagline: "Full Stack Developer • Project Manager",
@@ -373,9 +376,7 @@ export const translations = {
       statsLabels: {
         repos: "Repositories",
         contributions: "Contributions",
-        contributionsNote: "last year",
-        stars: "Stars",
-        following: "Following"
+        contributionsNote: "last year"
       },
       aboutTitle: "About me",
       about: [
@@ -384,7 +385,6 @@ export const translations = {
         "Always learning new frameworks, languages, and tools",
         "Gamer at heart & tech enthusiast"
       ],
-      achievementsTitle: "GitHub Achievements",
       reposTitle: "Featured repositories",
       repos: [
         { name: "CodeLink", desc: "Social network for developers" },

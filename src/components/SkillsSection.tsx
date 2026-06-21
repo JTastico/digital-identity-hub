@@ -1,12 +1,11 @@
-import { Code } from "lucide-react";
-import { 
-  SiReact, SiNextdotjs, SiVuedotjs, SiLaravel, SiTailwindcss,
-  SiDjango, SiSpringboot, SiNodedotjs, SiDotnet,
-  SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiSupabase, SiAmazondynamodb,
+import {
+  SiReact, SiNextdotjs, SiVuedotjs, SiAngular, SiAstro, SiLaravel, SiTailwindcss,
+  SiDjango, SiFastapi, SiSpringboot, SiNodedotjs, SiDotnet,
+  SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiSupabase,
   SiKotlin, SiFlutter, SiSwift,
   SiGithub, SiDocker, SiSwagger, SiPostman, SiFigma, SiAmazonwebservices
 } from "react-icons/si";
-import { Users, GitBranch, ClipboardList, Target } from "lucide-react";
+import { Code, Users, GitBranch, ClipboardList, Target, Timer, Layers } from "lucide-react";
 
 const skillCategories = [
   {
@@ -16,8 +15,9 @@ const skillCategories = [
     skills: [
       { name: "React", icon: SiReact, color: "#61DAFB" },
       { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+      { name: "Angular", icon: SiAngular, color: "#DD0031" },
+      { name: "Astro", icon: SiAstro, color: "#FF5D01" },
       { name: "Vue 3", icon: SiVuedotjs, color: "#4FC08D" },
-      { name: "Laravel Blade", icon: SiLaravel, color: "#FF2D20" },
       { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" }
     ]
   },
@@ -28,6 +28,7 @@ const skillCategories = [
     skills: [
       { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
       { name: "Django", icon: SiDjango, color: "#092E20" },
+      { name: "FastAPI", icon: SiFastapi, color: "#009688" },
       { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
       { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
       { name: "ASP.NET Core", icon: SiDotnet, color: "#512BD4" }
@@ -42,8 +43,7 @@ const skillCategories = [
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
       { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-      { name: "Supabase", icon: SiSupabase, color: "#3FCF8E" },
-      { name: "DynamoDB", icon: SiAmazondynamodb, color: "#4053D6" }
+      { name: "Supabase", icon: SiSupabase, color: "#3FCF8E" }
     ]
   },
   {
@@ -52,9 +52,15 @@ const skillCategories = [
     gradient: "from-orange-500 to-red-500",
     skills: [
       { name: "Kotlin", icon: SiKotlin, color: "#7F52FF" },
-      { name: "Flutter", icon: SiFlutter, color: "#02569B" },
-      { name: "SwiftUI", icon: SiSwift, color: "#F05138" },
-      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" }
+      { name: "SwiftUI", icon: SiSwift, color: "#F05138" }
+    ]
+  },
+  {
+    title: "Multiplataforma",
+    icon: Layers,
+    gradient: "from-sky-500 to-indigo-500",
+    skills: [
+      { name: "Flutter", icon: SiFlutter, color: "#02569B" }
     ]
   },
   {
@@ -76,6 +82,7 @@ const skillCategories = [
     gradient: "from-teal-500 to-cyan-500",
     skills: [
       { name: "Scrum", icon: GitBranch, color: "#0EA5E9" },
+      { name: "Sprints", icon: Timer, color: "#F43F5E" },
       { name: "Kanban", icon: ClipboardList, color: "#8B5CF6" },
       { name: "Gestión de Proyectos", icon: Target, color: "#10B981" },
       { name: "Requerimientos", icon: ClipboardList, color: "#F59E0B" }
@@ -107,7 +114,7 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
           {skillCategories.map((category, index) => (
             <div 
               key={index}
