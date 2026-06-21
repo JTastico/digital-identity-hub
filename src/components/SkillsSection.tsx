@@ -15,10 +15,10 @@ const skillCategories = [
     skills: [
       { name: "React", icon: SiReact, color: "#61DAFB" },
       { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-      { name: "Angular", icon: SiAngular, color: "#DD0031" },
       { name: "Astro", icon: SiAstro, color: "#FF5D01" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" },
       { name: "Vue 3", icon: SiVuedotjs, color: "#4FC08D" },
-      { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" }
+      { name: "Angular", icon: SiAngular, color: "#DD0031" }
     ]
   },
   {
@@ -26,12 +26,12 @@ const skillCategories = [
     icon: Code,
     gradient: "from-purple-500 to-pink-500",
     skills: [
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
       { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+      { name: "ASP.NET Core", icon: SiDotnet, color: "#512BD4" },
       { name: "Django", icon: SiDjango, color: "#092E20" },
       { name: "FastAPI", icon: SiFastapi, color: "#009688" },
-      { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "ASP.NET Core", icon: SiDotnet, color: "#512BD4" }
+      { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" }
     ]
   },
   {
@@ -44,6 +44,31 @@ const skillCategories = [
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
       { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
       { name: "Supabase", icon: SiSupabase, color: "#3FCF8E" }
+    ]
+  },
+  {
+    title: "Herramientas",
+    icon: Code,
+    gradient: "from-blue-500 to-indigo-500",
+    skills: [
+      { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+      { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+      { name: "Swagger", icon: SiSwagger, color: "#85EA2D" },
+      { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" },
+      { name: "Figma", icon: SiFigma, color: "#F24E1E" }
+    ]
+  },
+  {
+    title: "Metodologías",
+    icon: Users,
+    gradient: "from-teal-500 to-cyan-500",
+    skills: [
+      { name: "Scrum", icon: GitBranch, color: "#0EA5E9" },
+      { name: "Sprints", icon: Timer, color: "#F43F5E" },
+      { name: "Kanban", icon: ClipboardList, color: "#8B5CF6" },
+      { name: "Gestión de Proyectos", icon: Target, color: "#10B981" },
+      { name: "Requerimientos", icon: ClipboardList, color: "#F59E0B" }
     ]
   },
   {
@@ -61,31 +86,6 @@ const skillCategories = [
     gradient: "from-sky-500 to-indigo-500",
     skills: [
       { name: "Flutter", icon: SiFlutter, color: "#02569B" }
-    ]
-  },
-  {
-    title: "Herramientas",
-    icon: Code,
-    gradient: "from-blue-500 to-indigo-500",
-    skills: [
-      { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
-      { name: "Docker", icon: SiDocker, color: "#2496ED" },
-      { name: "Swagger", icon: SiSwagger, color: "#85EA2D" },
-      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
-      { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-      { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" }
-    ]
-  },
-  {
-    title: "Metodologías",
-    icon: Users,
-    gradient: "from-teal-500 to-cyan-500",
-    skills: [
-      { name: "Scrum", icon: GitBranch, color: "#0EA5E9" },
-      { name: "Sprints", icon: Timer, color: "#F43F5E" },
-      { name: "Kanban", icon: ClipboardList, color: "#8B5CF6" },
-      { name: "Gestión de Proyectos", icon: Target, color: "#10B981" },
-      { name: "Requerimientos", icon: ClipboardList, color: "#F59E0B" }
     ]
   }
 ];

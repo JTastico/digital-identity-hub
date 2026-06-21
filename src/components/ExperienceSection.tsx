@@ -1,10 +1,11 @@
-import { Briefcase, Calendar, Star, ArrowRight, Layers, Server, Hexagon, Crown, Code2, MonitorSmartphone } from "lucide-react";
+import { Briefcase, Calendar, Star, ArrowRight, Layers, Server, Hexagon, Crown, Code2, MonitorSmartphone, Smartphone, Sparkles, Globe, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 // Portadas generadas para proyectos sin imagen: tema (icono + degradado) según el rol
 const coverThemes = {
   fullstack: { icon: Layers, gradient: "from-cyan-500 to-blue-500" },
   backend: { icon: Server, gradient: "from-purple-500 to-pink-500" },
+  mobile: { icon: Smartphone, gradient: "from-emerald-500 to-teal-500" },
   dotnet: { icon: Hexagon, gradient: "from-violet-500 to-indigo-500" },
   frontend: { icon: MonitorSmartphone, gradient: "from-sky-500 to-cyan-400" },
   leader: { icon: Crown, gradient: "from-amber-500 to-orange-500" },
@@ -14,6 +15,7 @@ const coverThemes = {
 const getCover = (title: string) => {
   const t = title.toLowerCase();
   if (t.includes(".net")) return coverThemes.dotnet;
+  if (t.includes("android") || t.includes("móvil") || t.includes("movil") || t.includes("mobile")) return coverThemes.mobile;
   if (t.includes("full stack") || t.includes("fullstack")) return coverThemes.fullstack;
   if (t.includes("backend") || t.includes("back end")) return coverThemes.backend;
   if (t.includes("frontend") || t.includes("front end")) return coverThemes.frontend;
@@ -37,6 +39,12 @@ const getInitials = (name: string) => {
   return name.slice(0, 2).toUpperCase();
 };
 
+// Proyectos cuyo logo flotante necesita fondo blanco para verse bien
+const lightLogoProjects = new Set(["Rueda de Problemas", "Problem Wheel"]);
+
+// Proyectos cuyo logo flotante va a la derecha (por defecto va a la izquierda)
+const rightLogoProjects = new Set(["Alianza Valorem"]);
+
 const ExperienceSection = () => {
   const { t } = useLanguage();
   const experiences = t.experience.items;
@@ -48,14 +56,18 @@ const ExperienceSection = () => {
 
     "CodeLink": ["iOS", "SwiftUI", "Firebase"],
 
-    "Dot's Go": ["React", "Node.js", "MongoDB"],
-    "Dot's Go - Web Learning Platform": ["React", "Node.js", "MongoDB"],
-    "Dot's Go - Plataforma Web de Aprendizaje": ["React", "Node.js", "MongoDB"],
+    "Dot's Go": ["React", "Node.js", "MongoDB", "Scrum"],
+    "Dot's Go - Web Learning Platform": ["React", "Node.js", "MongoDB", "Scrum"],
+    "Dot's Go - Plataforma Web de Aprendizaje": ["React", "Node.js", "MongoDB", "Scrum"],
 
-    "Problem Wheel": ["Management", "Analysis"],
-    "Rueda de Problemas": ["Gestión", "Análisis"],
+    "Problem Wheel": ["Management", "Analysis", "Scrum"],
+    "Rueda de Problemas": ["Gestión", "Análisis", "Scrum"],
 
-    "Juanjo": [".NET", "Clean Arch", "C#"]
+    "Juanjo": [".NET", "Clean Arch", "C#", "Swagger"],
+
+    "SOS en Señas": ["Android", "Kotlin", "ML"],
+
+    "Alianza Valorem": ["Astro", "TailwindCSS"]
   };
 
   return (
@@ -94,6 +106,8 @@ const ExperienceSection = () => {
               // Recuperar tecnologías basadas en el nombre del proyecto
               const tech = techMap[exp.project] || techMap[exp.title] || [];
               const images = exp.images || [];
+              const lightLogo = lightLogoProjects.has(exp.project);
+              const rightLogo = rightLogoProjects.has(exp.project);
               const cover = getCover(exp.title);
               const CoverIcon = cover.icon;
               const initials = getInitials(exp.project);
@@ -120,11 +134,11 @@ const ExperienceSection = () => {
                           {/* Velo para dar profundidad */}
                           <div className="absolute inset-0 bg-gradient-to-tr from-background/60 via-background/10 to-transparent" />
                           {/* Imagen secundaria flotante (estilo móvil) */}
-                          <div className="absolute bottom-3 left-3 h-[72%] aspect-[9/18] rounded-lg overflow-hidden border-2 border-card shadow-2xl ring-1 ring-white/10 -rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                          <div className={`absolute bottom-3 h-[56%] max-w-[55%] rounded-lg overflow-hidden border-2 border-card shadow-2xl ring-1 ring-white/10 group-hover:rotate-0 transition-transform duration-500 ${rightLogo ? 'right-3 rotate-3' : 'left-3 -rotate-3'} ${lightLogo ? 'bg-white p-2' : 'bg-card'}`}>
                             <img
                               src={images[1]}
                               alt={`${exp.project} - 2`}
-                              className="w-full h-full object-cover"
+                              className="h-full w-auto object-cover"
                             />
                           </div>
                         </div>
@@ -155,15 +169,17 @@ const ExperienceSection = () => {
                       )}
 
                       {/* Fecha (overlay) */}
-                      <div className="absolute top-3 right-3">
-                        <div className="bg-background/80 backdrop-blur text-[10px] md:text-xs font-mono py-1 px-3 rounded-full border border-white/10 shadow-lg flex items-center gap-2">
-                          <Calendar className="w-3 h-3 text-primary" />
-                          {exp.period}
+                      {exp.period && (
+                        <div className="absolute top-3 right-3">
+                          <div className="bg-background/80 backdrop-blur text-[10px] md:text-xs font-mono py-1 px-3 rounded-full border border-white/10 shadow-lg flex items-center gap-2">
+                            <Calendar className="w-3 h-3 text-primary" />
+                            {exp.period}
+                          </div>
                         </div>
-                      </div>
+                      )}
 
                       {/* Indicador "actual" (overlay) */}
-                      {exp.current && (
+                      {/* {exp.current && (
                         <div className="absolute top-3 left-3 flex items-center gap-2 bg-background/80 backdrop-blur py-1 px-3 rounded-full border border-green-500/30">
                           <span className="flex h-2 w-2 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -171,7 +187,26 @@ const ExperienceSection = () => {
                           </span>
                           <span className="text-[10px] text-green-400 font-medium">{t.experience.current}</span>
                         </div>
-                      )}
+                      )} */}
+
+                      {/* Detalle del proyecto: reemplaza la portada al hacer hover (legible) */}
+                      <div className="absolute inset-0 flex flex-col bg-gradient-to-br from-secondary to-card opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        {/* Barra de acento superior */}
+                        <div className="h-1 bg-gradient-to-r from-cyan-400 via-primary to-purple-500" />
+                        <div className="flex-1 flex flex-col justify-center gap-3 px-5 py-4 overflow-hidden">
+                          {/* Encabezado */}
+                          <div className="flex items-center gap-2">
+                            <div className="w-7 h-7 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
+                              <Sparkles className="w-3.5 h-3.5 text-primary" />
+                            </div>
+                            <span className="text-[11px] font-semibold uppercase tracking-wider text-primary">{t.experience.aboutLabel}</span>
+                          </div>
+                          {/* Descripción */}
+                          <p className={`text-sm leading-relaxed line-clamp-6 ${exp.description ? 'text-foreground/85' : 'italic text-muted-foreground'}`}>
+                            {exp.description || t.experience.detailsSoon}
+                          </p>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Header Card */}
@@ -207,6 +242,20 @@ const ExperienceSection = () => {
                         </div>
                       ))}
                     </div>
+
+                    {/* Enlace al proyecto (solo si existe) */}
+                    {exp.link && (
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary/20 hover:border-primary/40 transition-all group/link"
+                      >
+                        <Globe className="w-4 h-4" />
+                        {t.experience.visitProject}
+                        <ExternalLink className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                      </a>
+                    )}
 
                   </div>
                 </div>
