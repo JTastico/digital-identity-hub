@@ -80,21 +80,20 @@ export const translations = {
           title: "Líder de Proyecto",
           project: "Dot's Go - Plataforma Web de Aprendizaje",
           company: "Proyecto Académico",
-          period: "Junio 2025 – Actualidad",
-          images: [],
+          period: "Junio 2025 – Enero 2026",
+          images: ["/dots/dashboard.png"],
           highlights: [
             "Dirección de equipo multidisciplinario",
             "Rediseño de arquitectura y dashboards interactivos",
             "Integración de APIs y despliegue en entornos productivos"
-          ],
-          current: true
+          ]
         },
         {
           title: "Líder de Proyecto",
           project: "Rueda de Problemas",
           company: "OCEAN S.R.L",
           period: "Octubre 2025 – Noviembre 2025",
-          images: [],
+          images: ["/ruedaproblemas/welcome.png"],
           highlights: [
             "Asignación de Fondos de Canon",
             "Levantamiento de requerimientos y reuniones con clientes",
@@ -274,21 +273,20 @@ export const translations = {
           title: "Project Lead",
           project: "Dot's Go - Web Learning Platform",
           company: "Academic Project",
-          period: "June 2025 – Present",
-          images: [],
+          period: "June 2025 – January 2026",
+          images: ["/dots/dashboard.png"],
           highlights: [
             "Leading a multidisciplinary team",
             "Redesigning architecture and interactive dashboards",
             "Integrating APIs and deploying in production environments"
-          ],
-          current: true
+          ]
         },
         {
           title: "Project Lead",
           project: "Problem Wheel",
           company: "OCEAN S.R.L",
           period: "October 2025 – November 2025",
-          images: [],
+          images: ["/ruedaproblemas/welcome.png"],
           highlights: [
             "Canon Fund Allocation Strategy",
             "Requirements gathering and client meetings",
