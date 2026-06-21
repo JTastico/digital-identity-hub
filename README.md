@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# Digital Identity Hub
 
-## Project info
+Tarjeta de presentación digital y portafolio personal de **Jamil Raúl Turpo Arocutipa** — Desarrollador Full Stack & Gestor de Proyectos. Aplicación web (SPA) bilingüe (Español / Inglés) con diseño *glassmorphism*.
 
-**URL**: https://lovable.dev/projects/49178587-826b-4582-aebf-2b1fa218f559
+## Tecnologías
 
-## How can I edit this code?
+- **Vite** — bundler y servidor de desarrollo
+- **React 18** + **TypeScript**
+- **React Router** (HashRouter)
+- **Tailwind CSS** + **shadcn/ui** (Radix UI)
+- **lucide-react** y **react-icons** para iconografía
 
-There are several ways of editing your application.
+## Requisitos
 
-**Use Lovable**
+- Node.js y npm instalados ([instalar con nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/49178587-826b-4582-aebf-2b1fa218f559) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Desarrollo local
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 1. Clonar el repositorio
+git clone https://github.com/JTastico/digital-identity-hub.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Entrar al directorio
+cd digital-identity-hub
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Instalar dependencias
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Iniciar el servidor de desarrollo (http://localhost:8080)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Scripts disponibles
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Servidor de desarrollo con recarga en caliente |
+| `npm run build` | Build de producción (carpeta `dist/`) |
+| `npm run build:dev` | Build en modo desarrollo |
+| `npm run preview` | Previsualiza el build de producción |
+| `npm run lint` | Ejecuta ESLint |
 
-**Use GitHub Codespaces**
+## Estructura
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+├── pages/        # Rutas: Landing, Portfolio, CV, Tarjeta Virtual, 404
+├── components/   # Secciones del portafolio + componentes UI (shadcn)
+├── context/      # LanguageContext (i18n ES/EN)
+├── data/         # translations.ts
+├── hooks/        # Hooks personalizados
+└── lib/          # Utilidades
+```
 
-## What technologies are used for this project?
+## Rutas
 
-This project is built with:
+| Ruta | Página |
+|------|--------|
+| `/` | Tarjeta de bienvenida (Landing) |
+| `/detalles` | Portafolio completo |
+| `/cv` | Curriculum Vitae |
+| `/tarjeta-virtual` | Tarjeta virtual con QR |
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Despliegue
 
-## How can I deploy this project?
+Genera el build de producción y publica el contenido de la carpeta `dist/` en cualquier hosting estático (GitHub Pages, Netlify, Vercel, etc.):
 
-Simply open [Lovable](https://lovable.dev/projects/49178587-826b-4582-aebf-2b1fa218f559) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```sh
+npm run build
+```
