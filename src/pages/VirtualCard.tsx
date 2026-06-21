@@ -11,6 +11,7 @@ import {
   SiGithub, SiDocker, SiFigma
 } from "react-icons/si";
 import { QRCodeSVG } from "qrcode.react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/jamil-profile.png";
 
@@ -281,12 +282,12 @@ const VirtualCard = () => {
 
         {/* Back to Portfolio Link */}
         <div className="text-center mt-6 animate-fade-in" style={{ animationDelay: '900ms' }}>
-          <a 
-            href="/" 
+          <Link
+            to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
           >
             <span>← Volver al portafolio completo</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

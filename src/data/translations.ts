@@ -168,6 +168,35 @@ export const translations = {
     footer: {
       tagline: "Full Stack Developer • Project Manager",
       madeWith: "Hecho con"
+    },
+    github: {
+      title: "GitHub",
+      subtitle: "Mi actividad y proyectos de código abierto",
+      bio: "Desarrollador Full Stack apasionado, desde Perú 🇵🇪",
+      viewProfile: "Ver perfil",
+      fullProfile: "Ver mi perfil completo en GitHub",
+      orgLabel: "Organización",
+      statsLabels: {
+        repos: "Repositorios",
+        contributions: "Contribuciones",
+        contributionsNote: "último año",
+        stars: "Estrellas",
+        following: "Siguiendo"
+      },
+      aboutTitle: "Sobre mí",
+      about: [
+        "Desde Perú 🇵🇪",
+        "Apasionado por el desarrollo Full Stack, la IA y la nube",
+        "Siempre aprendiendo nuevos frameworks, lenguajes y herramientas",
+        "Gamer de corazón y entusiasta de la tecnología"
+      ],
+      achievementsTitle: "Logros de GitHub",
+      reposTitle: "Repositorios destacados",
+      repos: [
+        { name: "CodeLink", desc: "Red social para desarrolladores" },
+        { name: "Dot-s", desc: "Plataforma web de aprendizaje" },
+        { name: "Gasteko-finance", desc: "" }
+      ]
     }
   },
   EN: {
@@ -333,6 +362,35 @@ export const translations = {
     footer: {
       tagline: "Full Stack Developer • Project Manager",
       madeWith: "Made with"
+    },
+    github: {
+      title: "GitHub",
+      subtitle: "My open-source activity and projects",
+      bio: "Passionate Full Stack developer, from Peru 🇵🇪",
+      viewProfile: "View profile",
+      fullProfile: "View my full GitHub profile",
+      orgLabel: "Organization",
+      statsLabels: {
+        repos: "Repositories",
+        contributions: "Contributions",
+        contributionsNote: "last year",
+        stars: "Stars",
+        following: "Following"
+      },
+      aboutTitle: "About me",
+      about: [
+        "From Peru 🇵🇪",
+        "Passionate about Full Stack development, AI and Cloud",
+        "Always learning new frameworks, languages, and tools",
+        "Gamer at heart & tech enthusiast"
+      ],
+      achievementsTitle: "GitHub Achievements",
+      reposTitle: "Featured repositories",
+      repos: [
+        { name: "CodeLink", desc: "Social network for developers" },
+        { name: "Dot-s", desc: "Web learning platform" },
+        { name: "Gasteko-finance", desc: "" }
+      ]
     }
   }
 };

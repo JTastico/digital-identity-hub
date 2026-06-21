@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import ProfileSection from "@/components/ProfileSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
+import GitHubSection from "@/components/GitHubSection";
 import EducationSection from "@/components/EducationSection";
 import SoftSkillsSection from "@/components/SoftSkillsSection";
 import ContactSection from "@/components/ContactSection";
@@ -140,6 +141,7 @@ const Portfolio = () => {
         <ExperienceSection />
         <SoftSkillsSection />
         <SkillsSection />
+        <GitHubSection />
         <EducationSection />
         <ContactSection />
       </div>
