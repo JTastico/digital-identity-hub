@@ -146,7 +146,7 @@ const SkillsSection = () => {
                     return (
                       <div 
                         key={i} 
-                        className="group/badge relative flex aspect-square min-h-[110px] flex-col justify-between rounded-2xl border border-border/50 bg-background/40 p-3 text-left transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5"
+                        className="group/badge relative flex aspect-square min-h-[110px] flex-col items-center justify-center gap-4 rounded-2xl border border-border/50 bg-background/40 p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5"
                         style={{ animationDelay: `${(index * 100) + (i * 50)}ms` }}
                       >
                         <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${category.gradient} p-0.5`}>
