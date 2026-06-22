@@ -17,7 +17,7 @@ import profileImage from "@/assets/jamil-profile.png";
 
 const techSkills = [
   { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  { name: "Next.js", icon: SiNextdotjs, color: "currentColor" },
   { name: "Vue", icon: SiVuedotjs, color: "#4FC08D" },
   { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
   { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
@@ -33,7 +33,7 @@ const techSkills = [
   { name: "Kotlin", icon: SiKotlin, color: "#7F52FF" },
   { name: "Flutter", icon: SiFlutter, color: "#02569B" },
   { name: "Swift", icon: SiSwift, color: "#F05138" },
-  { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+  { name: "GitHub", icon: SiGithub, color: "currentColor" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "Figma", icon: SiFigma, color: "#F24E1E" },
 ];

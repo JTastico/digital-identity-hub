@@ -14,7 +14,7 @@ const skillCategories = [
     gradient: "from-cyan-500 to-blue-500",
     skills: [
       { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+      { name: "Next.js", icon: SiNextdotjs, color: "currentColor" },
       { name: "Astro", icon: SiAstro, color: "#FF5D01" },
       { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" },
       { name: "Vue 3", icon: SiVuedotjs, color: "#4FC08D" },
@@ -51,7 +51,7 @@ const skillCategories = [
     icon: Code,
     gradient: "from-blue-500 to-indigo-500",
     skills: [
-      { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+      { name: "GitHub", icon: SiGithub, color: "currentColor" },
       { name: "Docker", icon: SiDocker, color: "#2496ED" },
       { name: "Postman", icon: SiPostman, color: "#FF6C37" },
       { name: "Swagger", icon: SiSwagger, color: "#85EA2D" },

@@ -1,7 +1,15 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Aplica el tema guardado antes de pintar (evita parpadeo). Por defecto: oscuro.
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light') document.documentElement.classList.remove('dark');
+        else document.documentElement.classList.add('dark');
+      } catch (e) { document.documentElement.classList.add('dark'); }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jamil Turpo - Desarrollador Full Stack & Gestor de Proyectos</title>
     <meta name="description" content="Tarjeta de presentación digital de Jamil Raúl Turpo Arocutipa. Desarrollador Full Stack y Gestor de Proyectos Tecnológicos especializado en React, Laravel, Node.js y metodologías ágiles." />

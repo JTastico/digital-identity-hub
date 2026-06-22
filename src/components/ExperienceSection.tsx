@@ -119,10 +119,10 @@ const ExperienceSection = () => {
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   {/* Card */}
-                  <div className="h-full glass-card-elevated p-5 md:p-6 rounded-2xl border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 bg-card/40 backdrop-blur-md flex flex-col">
+                  <div className="h-full glass-card-elevated p-5 md:p-6 rounded-2xl border border-border/60 hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 bg-card/40 backdrop-blur-md flex flex-col">
 
                     {/* Portada del proyecto: 2+ imágenes (mockup), 1 imagen, o portada generada */}
-                    <div className="relative mb-5 rounded-xl overflow-hidden border border-white/5 bg-gradient-to-br from-secondary/40 to-card/40 aspect-video">
+                    <div className="relative mb-5 rounded-xl overflow-hidden border border-border/60 bg-gradient-to-br from-secondary/40 to-card/40 aspect-video">
                       {images.length >= 2 ? (
                         <div className="absolute inset-0">
                           {/* Imagen principal de fondo */}
@@ -189,8 +189,8 @@ const ExperienceSection = () => {
                         </div>
                       )} */}
 
-                      {/* Detalle del proyecto: reemplaza la portada al hacer hover (legible) */}
-                      <div className="absolute inset-0 flex flex-col bg-gradient-to-br from-secondary to-card opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      {/* Detalle del proyecto: reemplaza la portada al hacer hover (solo desktop) */}
+                      <div className="absolute inset-0 hidden md:flex md:flex-col bg-gradient-to-br from-secondary to-card opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         {/* Barra de acento superior */}
                         <div className="h-1 bg-gradient-to-r from-cyan-400 via-primary to-purple-500" />
                         <div className="flex-1 flex flex-col justify-center gap-3 px-5 py-4 overflow-hidden">
@@ -221,6 +221,11 @@ const ExperienceSection = () => {
                       <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">{exp.company}</p>
                     </div>
 
+                    {/* Descripción (visible en móvil; en desktop aparece al hacer hover sobre la portada) */}
+                    <p className={`md:hidden text-sm leading-relaxed mb-4 ${exp.description ? 'text-muted-foreground' : 'italic text-muted-foreground/70'}`}>
+                      {exp.description || t.experience.detailsSoon}
+                    </p>
+
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2 mb-5">
                       {tech.map((tg, i) => (
@@ -234,7 +239,7 @@ const ExperienceSection = () => {
                     </div>
 
                     {/* Highlights */}
-                    <div className="space-y-2 border-t border-white/5 pt-4 mt-auto">
+                    <div className="space-y-2 border-t border-border/60 pt-4 mt-auto">
                       {exp.highlights.map((h, i) => (
                         <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                           <ArrowRight className="w-3.5 h-3.5 text-primary/50 mt-1 flex-shrink-0" />

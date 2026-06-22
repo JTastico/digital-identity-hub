@@ -21,7 +21,7 @@ const techCategories = [
     name: "Frontend",
     skills: [
       { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+      { name: "Next.js", icon: SiNextdotjs, color: "currentColor" },
       { name: "Vue 3", icon: SiVuedotjs, color: "#4FC08D" },
       { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" },
     ]
@@ -57,7 +57,7 @@ const techCategories = [
   {
     name: "Herramientas",
     skills: [
-      { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+      { name: "GitHub", icon: SiGithub, color: "currentColor" },
       { name: "Docker", icon: SiDocker, color: "#2496ED" },
       { name: "Figma", icon: SiFigma, color: "#F24E1E" },
       { name: "Postman", icon: SiPostman, color: "#FF6C37" },

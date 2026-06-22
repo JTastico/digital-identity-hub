@@ -44,17 +44,31 @@ export const translations = {
       visitProject: "Visitar proyecto",
       items: [
         {
-          title: "Desarrollador Full Stack",
-          project: "CodeLink",
-          company: "Red Social para Desarrolladores",
-          period: "Junio 2025 – Agosto 2025",
-          images: ["/codelink/content.png", "/codelink/login.png"],
-          link: "",
-          description: "Red social para programadores: permite pedir ayuda sobre programación a cualquier persona del mundo, con publicaciones generales o consultas por mensaje privado.",
+          title: "Desarrollador Frontend",
+          project: "Alianza Valorem",
+          company: "Landing Page",
+          period: "Febrero 2026 – Marzo 2026",
+          images: ["/alianzavalorem/welcome.webp", "/alianzavalorem/logo.webp"],
+          link: "https://alianzavalorem.com/",
+          description: "Diseñé y desarrollé por completo la landing page de Alianza Valorem, desde la interfaz y la experiencia de usuario hasta el código, usando Astro para lograr una web moderna, veloz y optimizada para SEO.",
           highlights: [
-            "Autenticación y perfiles dinámicos",
-            "Servicios en tiempo real (Chat/Feeds)",
-            "Diseño enfocado en UX móvil"
+            "Diseño y desarrollo integral de la landing",
+            "Interfaz moderna y responsive",
+            "Optimizada para rendimiento y SEO con Astro"
+          ]
+        },
+        {
+          title: "Líder de Proyecto",
+          project: "Rueda de Problemas",
+          company: "OCEAN S.R.L",
+          period: "Octubre 2025 – Noviembre 2025",
+          images: ["/ruedaproblemas/welcome.webp", "/ruedaproblemas/logo.svg"],
+          link: "https://ruedadeproblemas.pe/",
+          description: "Plataforma que conecta problemas reales de los sectores productivo, gubernamental y social con capacidades de investigación e innovación para generar proyectos I+D+i+e con potencial de financiamiento. Lideré la planificación, reuniones, requerimientos y la gestión de sprints y revisiones.",
+          highlights: [
+            "Asignación de Fondos de Canon",
+            "Levantamiento de requerimientos y reuniones con clientes",
+            "Validación de entregables finales"
           ]
         },
         {
@@ -62,7 +76,7 @@ export const translations = {
           project: "SOS en Señas",
           company: "App de Accesibilidad",
           period: "Julio 2025 – Septiembre 2025",
-          images: ["/sosensenas/movil.png", "/sosensenas/logo.svg"],
+          images: ["/sosensenas/movil.webp", "/sosensenas/logo.svg"],
           link: "https://sosenseñas.com",
           description: "Aplicación Android de reconocimiento de señas para mujeres embarazadas sordosignantes, facilitando su comunicación.",
           highlights: [
@@ -72,17 +86,31 @@ export const translations = {
           ]
         },
         {
-          title: "Desarrollador Backend",
-          project: "Sistema de Gestión de Riesgos",
-          company: "Laboratorios La Cooper",
-          period: "Abril 2024 – Agosto 2024",
-          images: [],
-          link: "",
-          description: "Gestor de riesgos para una fábrica: registra problemas y deficiencias, y hace llegar requerimientos de mejora en seguridad a los encargados correspondientes.",
+          title: "Líder de Proyecto",
+          project: "Dot's Go - Plataforma Web de Aprendizaje",
+          company: "Proyecto Académico",
+          period: "Junio 2025 – Enero 2026",
+          images: ["/dots/dashboard.webp", "/dots/logo.webp"],
+          link: "https://devdotfrontend.onrender.com/",
+          description: "Juego multijugador en tiempo real para aprender los rombos NFPA 704, evaluando el reconocimiento de los distintos rombos de seguridad.",
           highlights: [
-            "Desarrollo de sistema integral de gestión de riesgos",
-            "Implementación de flujos de validación y seguridad de datos",
-            "Coordinación con auditores internos y externos"
+            "Dirección de equipo multidisciplinario",
+            "Rediseño de arquitectura y dashboards interactivos",
+            "Integración de APIs y despliegue en entornos productivos"
+          ]
+        },
+        {
+          title: "Desarrollador Full Stack",
+          project: "CodeLink",
+          company: "Red Social para Desarrolladores",
+          period: "Junio 2025 – Agosto 2025",
+          images: ["/codelink/content.webp", "/codelink/login.webp"],
+          link: "",
+          description: "Red social para programadores: permite pedir ayuda sobre programación a cualquier persona del mundo, con publicaciones generales o consultas por mensaje privado.",
+          highlights: [
+            "Autenticación y perfiles dinámicos",
+            "Servicios en tiempo real (Chat/Feeds)",
+            "Diseño enfocado en UX móvil"
           ]
         },
         {
@@ -100,45 +128,17 @@ export const translations = {
           ]
         },
         {
-          title: "Desarrollador Frontend",
-          project: "Alianza Valorem",
-          company: "Landing Page",
-          period: "Febrero 2026 – Marzo 2026",
-          images: ["/alianzavalorem/welcome.png", "/alianzavalorem/logo.webp"],
-          link: "https://alianzavalorem.com/",
-          description: "Diseñé y desarrollé por completo la landing page de Alianza Valorem, desde la interfaz y la experiencia de usuario hasta el código, usando Astro para lograr una web moderna, veloz y optimizada para SEO.",
+          title: "Desarrollador Backend",
+          project: "Sistema de Gestión de Riesgos",
+          company: "Laboratorios La Cooper",
+          period: "Abril 2024 – Agosto 2024",
+          images: [],
+          link: "",
+          description: "Gestor de riesgos para una fábrica: registra problemas y deficiencias, y hace llegar requerimientos de mejora en seguridad a los encargados correspondientes.",
           highlights: [
-            "Diseño y desarrollo integral de la landing",
-            "Interfaz moderna y responsive",
-            "Optimizada para rendimiento y SEO con Astro"
-          ]
-        },
-        {
-          title: "Líder de Proyecto",
-          project: "Dot's Go - Plataforma Web de Aprendizaje",
-          company: "Proyecto Académico",
-          period: "Junio 2025 – Enero 2026",
-          images: ["/dots/dashboard.png", "/dots/logo.webp"],
-          link: "https://devdotfrontend.onrender.com/",
-          description: "Juego multijugador en tiempo real para aprender los rombos NFPA 704, evaluando el reconocimiento de los distintos rombos de seguridad.",
-          highlights: [
-            "Dirección de equipo multidisciplinario",
-            "Rediseño de arquitectura y dashboards interactivos",
-            "Integración de APIs y despliegue en entornos productivos"
-          ]
-        },
-        {
-          title: "Líder de Proyecto",
-          project: "Rueda de Problemas",
-          company: "OCEAN S.R.L",
-          period: "Octubre 2025 – Noviembre 2025",
-          images: ["/ruedaproblemas/welcome.png", "/ruedaproblemas/logo.svg"],
-          link: "https://ruedadeproblemas.pe/",
-          description: "Plataforma que conecta problemas reales de los sectores productivo, gubernamental y social con capacidades de investigación e innovación para generar proyectos I+D+i+e con potencial de financiamiento. Lideré la planificación, reuniones, requerimientos y la gestión de sprints y revisiones.",
-          highlights: [
-            "Asignación de Fondos de Canon",
-            "Levantamiento de requerimientos y reuniones con clientes",
-            "Validación de entregables finales"
+            "Desarrollo de sistema integral de gestión de riesgos",
+            "Implementación de flujos de validación y seguridad de datos",
+            "Coordinación con auditores internos y externos"
           ]
         }
       ]
@@ -278,17 +278,31 @@ export const translations = {
       visitProject: "Visit project",
       items: [
         {
-          title: "Full Stack Developer",
-          project: "CodeLink",
-          company: "Social Network for Developers",
-          period: "June 2025 – August 2025",
-          images: ["/codelink/content.png", "/codelink/login.png"],
-          link: "",
-          description: "A social network for programmers: ask anyone in the world for coding help, through public posts or private messages.",
+          title: "Frontend Developer",
+          project: "Alianza Valorem",
+          company: "Landing Page",
+          period: "February 2026 – March 2026",
+          images: ["/alianzavalorem/welcome.webp", "/alianzavalorem/logo.webp"],
+          link: "https://alianzavalorem.com/",
+          description: "I designed and built the entire Alianza Valorem landing page, from the UI and user experience to the code, using Astro to deliver a modern, fast, SEO-optimized site.",
           highlights: [
-            "Authentication and dynamic profiles",
-            "Real-time services (Chat/Feeds)",
-            "Mobile UX focused design"
+            "End-to-end landing design and development",
+            "Modern, responsive interface",
+            "Performance and SEO optimized with Astro"
+          ]
+        },
+        {
+          title: "Project Lead",
+          project: "Problem Wheel",
+          company: "OCEAN S.R.L",
+          period: "October 2025 – November 2025",
+          images: ["/ruedaproblemas/welcome.webp", "/ruedaproblemas/logo.svg"],
+          link: "https://ruedadeproblemas.pe/",
+          description: "A platform connecting real problems from the productive, government and social sectors with research and innovation capabilities to generate R&D&I projects with funding potential. I led planning, meetings, requirements, and sprint and review management.",
+          highlights: [
+            "Canon Fund Allocation Strategy",
+            "Requirements gathering and client meetings",
+            "Validation of final deliverables"
           ]
         },
         {
@@ -296,7 +310,7 @@ export const translations = {
           project: "SOS en Señas",
           company: "Accessibility App",
           period: "July 2025 – September 2025",
-          images: ["/sosensenas/movil.png", "/sosensenas/logo.svg"],
+          images: ["/sosensenas/movil.webp", "/sosensenas/logo.svg"],
           link: "https://sosenseñas.com",
           description: "Android app for sign-language recognition aimed at deaf-signing pregnant women, supporting their communication.",
           highlights: [
@@ -306,17 +320,31 @@ export const translations = {
           ]
         },
         {
-          title: "Backend Developer",
-          project: "Risk Management System",
-          company: "Laboratorios La Cooper",
-          period: "April 2024 – August 2024",
-          images: [],
-          link: "",
-          description: "A risk manager for a factory: logs problems and deficiencies and routes safety improvement requests to the responsible safety officers.",
+          title: "Project Lead",
+          project: "Dot's Go - Web Learning Platform",
+          company: "Academic Project",
+          period: "June 2025 – January 2026",
+          images: ["/dots/dashboard.webp", "/dots/logo.webp"],
+          link: "https://devdotfrontend.onrender.com/",
+          description: "A real-time multiplayer game to learn the NFPA 704 diamonds, testing recognition of the different safety diamonds.",
           highlights: [
-            "Development of comprehensive risk management system",
-            "Implementation of data validation and security flows",
-            "Coordination with internal and external auditors"
+            "Leading a multidisciplinary team",
+            "Redesigning architecture and interactive dashboards",
+            "Integrating APIs and deploying in production environments"
+          ]
+        },
+        {
+          title: "Full Stack Developer",
+          project: "CodeLink",
+          company: "Social Network for Developers",
+          period: "June 2025 – August 2025",
+          images: ["/codelink/content.webp", "/codelink/login.webp"],
+          link: "",
+          description: "A social network for programmers: ask anyone in the world for coding help, through public posts or private messages.",
+          highlights: [
+            "Authentication and dynamic profiles",
+            "Real-time services (Chat/Feeds)",
+            "Mobile UX focused design"
           ]
         },
         {
@@ -334,45 +362,17 @@ export const translations = {
           ]
         },
         {
-          title: "Frontend Developer",
-          project: "Alianza Valorem",
-          company: "Landing Page",
-          period: "February 2026 – March 2026",
-          images: ["/alianzavalorem/welcome.png", "/alianzavalorem/logo.webp"],
-          link: "https://alianzavalorem.com/",
-          description: "I designed and built the entire Alianza Valorem landing page, from the UI and user experience to the code, using Astro to deliver a modern, fast, SEO-optimized site.",
+          title: "Backend Developer",
+          project: "Risk Management System",
+          company: "Laboratorios La Cooper",
+          period: "April 2024 – August 2024",
+          images: [],
+          link: "",
+          description: "A risk manager for a factory: logs problems and deficiencies and routes safety improvement requests to the responsible safety officers.",
           highlights: [
-            "End-to-end landing design and development",
-            "Modern, responsive interface",
-            "Performance and SEO optimized with Astro"
-          ]
-        },
-        {
-          title: "Project Lead",
-          project: "Dot's Go - Web Learning Platform",
-          company: "Academic Project",
-          period: "June 2025 – January 2026",
-          images: ["/dots/dashboard.png", "/dots/logo.webp"],
-          link: "https://devdotfrontend.onrender.com/",
-          description: "A real-time multiplayer game to learn the NFPA 704 diamonds, testing recognition of the different safety diamonds.",
-          highlights: [
-            "Leading a multidisciplinary team",
-            "Redesigning architecture and interactive dashboards",
-            "Integrating APIs and deploying in production environments"
-          ]
-        },
-        {
-          title: "Project Lead",
-          project: "Problem Wheel",
-          company: "OCEAN S.R.L",
-          period: "October 2025 – November 2025",
-          images: ["/ruedaproblemas/welcome.png", "/ruedaproblemas/logo.svg"],
-          link: "https://ruedadeproblemas.pe/",
-          description: "A platform connecting real problems from the productive, government and social sectors with research and innovation capabilities to generate R&D&I projects with funding potential. I led planning, meetings, requirements, and sprint and review management.",
-          highlights: [
-            "Canon Fund Allocation Strategy",
-            "Requirements gathering and client meetings",
-            "Validation of final deliverables"
+            "Development of comprehensive risk management system",
+            "Implementation of data validation and security flows",
+            "Coordination with internal and external auditors"
           ]
         }
       ]
