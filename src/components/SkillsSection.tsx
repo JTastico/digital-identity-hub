@@ -92,14 +92,14 @@ const skillCategories = [
 
 const SkillsSection = () => {
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="page-section page-shell relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="floating-orb w-96 h-96 bg-primary/20 -top-48 -right-48" />
         <div className="floating-orb w-64 h-64 bg-purple-500/10 bottom-0 -left-32" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="content-container relative z-10">
         <div className="text-center mb-16 animate-slide-up">
           <div className="inline-flex items-center justify-center gap-3 mb-4">
             <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center animate-pulse-glow">
@@ -114,11 +114,11 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 items-start gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {skillCategories.map((category, index) => (
             <div 
               key={index}
-              className="glass-card-glow p-6 group"
+              className="glass-card-glow group p-5 sm:p-6"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Category Header */}

@@ -160,29 +160,29 @@ const CVPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-lg">
+        <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
           <Button
             variant="ghost"
             onClick={() => navigate('/detalles')}
             className="flex items-center gap-2 hover:bg-primary/10"
           >
             <ArrowLeft className="w-4 h-4" />
-            Volver
+            <span className="hidden sm:inline">Volver</span>
           </Button>
-          <h1 className="text-lg font-bold gradient-text">Curriculum Vitae</h1>
-          <div className="w-20" />
+          <h1 className="gradient-text text-center text-sm font-bold sm:text-lg">Curriculum Vitae</h1>
+          <div className="w-10 sm:w-20" />
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 max-w-5xl">
+      <main className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-6 sm:py-8">
         {/* Profile Header */}
         <section 
           className={`glass-card-elevated rounded-2xl p-6 md:p-8 mb-8 transition-all duration-700 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
             {/* Photo */}
             <div className="relative shrink-0">
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-cyan-400 p-1">
@@ -195,29 +195,29 @@ const CVPage = () => {
             </div>
 
             {/* Info */}
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="text-2xl md:text-3xl font-bold font-heading mb-1">
+            <div className="min-w-0 flex-1 text-center md:text-left">
+              <h1 className="mb-1 text-2xl font-bold font-heading sm:text-3xl">
                 <span className="gradient-text">Jamil Raúl Turpo Arocutipa</span>
               </h1>
-              <p className="text-lg text-primary font-medium mb-4">
+              <p className="mb-4 text-base font-medium text-primary sm:text-lg">
                 Desarrollador Full Stack & Gestor de Proyectos Tecnológicos
               </p>
               
               {/* Contact Grid */}
-              <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm">
-                <a href="mailto:jamilturpoarocutipa@gmail.com" className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 border border-border/50 hover:border-primary/50 transition-colors">
+              <div className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 md:flex md:flex-wrap md:justify-start">
+                <a href="mailto:jamilturpoarocutipa@gmail.com" className="flex min-w-0 items-center gap-2 rounded-lg border border-border/50 bg-card/50 px-3 py-1.5 transition-colors hover:border-primary/50">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span className="text-foreground/80">jamilturpoarocutipa@gmail.com</span>
+                  <span className="min-w-0 break-all text-left text-foreground/80">jamilturpoarocutipa@gmail.com</span>
                 </a>
-                <a href="tel:+51991010001" className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 border border-border/50 hover:border-primary/50 transition-colors">
+                <a href="tel:+51991010001" className="flex items-center gap-2 rounded-lg border border-border/50 bg-card/50 px-3 py-1.5 transition-colors hover:border-primary/50">
                   <Phone className="w-4 h-4 text-primary" />
                   <span className="text-foreground/80">+51 991 010 001</span>
                 </a>
-                <a href="https://github.com/JTastico" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 border border-border/50 hover:border-primary/50 transition-colors">
+                <a href="https://github.com/JTastico" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg border border-border/50 bg-card/50 px-3 py-1.5 transition-colors hover:border-primary/50">
                   <Github className="w-4 h-4 text-primary" />
                   <span className="text-foreground/80">JTastico</span>
                 </a>
-                <a href="https://www.linkedin.com/in/turpojamil/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 border border-border/50 hover:border-primary/50 transition-colors">
+                <a href="https://www.linkedin.com/in/turpojamil/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg border border-border/50 bg-card/50 px-3 py-1.5 transition-colors hover:border-primary/50">
                   <Linkedin className="w-4 h-4 text-primary" />
                   <span className="text-foreground/80">turpojamil</span>
                 </a>
@@ -298,7 +298,7 @@ const CVPage = () => {
             Educación y Certificaciones
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {education.map((edu, index) => (
               <div key={index} className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
                 <span className="text-xs font-medium text-primary mb-1 block">{edu.type}</span>
@@ -363,7 +363,7 @@ const CVPage = () => {
             Habilidades Blandas
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
             {softSkills.map((skill, index) => (
               <div key={index} className="flex items-center gap-2 p-3 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
                 <skill.icon className="w-4 h-4 text-primary" />
@@ -409,7 +409,7 @@ const CVPage = () => {
             Idiomas
           </h2>
           
-          <div className="flex gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <div className="px-4 py-2 rounded-xl bg-card/50 border border-border/50">
               <span className="font-medium text-foreground">Español</span>
               <span className="text-muted-foreground"> • Nativo</span>

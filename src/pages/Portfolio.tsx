@@ -25,7 +25,7 @@ const Portfolio = () => {
       {/* ==================================================================================
           CABECERA
          ================================================================================== */}
-      <section className="relative w-full pt-12 pb-16 px-4 md:px-12 overflow-hidden border-b border-border bg-card">
+      <section className="relative w-full overflow-hidden border-b border-border bg-card page-shell pt-12 pb-16 sm:pt-14 sm:pb-20">
 
         {/* Fondo Decorativo de la Cabecera */}
         <div className="absolute inset-0 pointer-events-none">
@@ -34,10 +34,10 @@ const Portfolio = () => {
             <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--foreground)/0.04)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--foreground)/0.04)_1px,transparent_1px)] bg-[size:60px_60px]" />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="content-container relative z-10">
 
           {/* 1. Controles: Tema e Idioma (Esquina superior derecha) */}
-          <div className="flex justify-end gap-3 mb-8 md:absolute md:top-0 md:right-0">
+          <div className="mb-8 flex justify-end gap-3 sm:mb-10 md:absolute md:right-0 md:top-0">
               <Button
                 variant="ghost"
                 size="sm"
@@ -59,7 +59,7 @@ const Portfolio = () => {
               </Button>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mt-6 md:mt-14">
+          <div className="mt-6 flex flex-col items-center gap-8 sm:gap-10 md:mt-14 md:flex-row md:items-start md:gap-12">
 
               {/* 2. Foto (Izquierda) */}
               <div className="flex-shrink-0 relative group">
@@ -75,20 +75,20 @@ const Portfolio = () => {
               </div>
 
               {/* 3. Información (Derecha) */}
-              <div className="flex-1 flex flex-col text-center md:text-left space-y-6">
+              <div className="flex min-w-0 flex-1 flex-col space-y-6 text-center md:text-left">
 
                   {/* Nombre y Título */}
                   <div>
-                      <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2 text-foreground">
+                      <h1 className="mb-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
                           Jamil Raúl <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Turpo</span>
                       </h1>
-                      <p className="text-lg md:text-xl text-muted-foreground font-medium">
+                      <p className="text-base font-medium text-muted-foreground sm:text-lg md:text-xl">
                           {t.landing.role}
                       </p>
                   </div>
 
                   {/* Botones: CV, Linkedin, Github */}
-                  <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
                       <Button
                         asChild
                         className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl px-6 h-11 gap-2 shadow-lg shadow-blue-900/20 border-0"
@@ -99,21 +99,21 @@ const Portfolio = () => {
                         </Link>
                       </Button>
 
-                      <a href="https://www.linkedin.com/in/turpojamil/" target="_blank" rel="noreferrer">
-                        <Button variant="outline" className="bg-secondary border-border text-foreground/80 hover:text-foreground hover:border-blue-500/50 hover:bg-blue-500/10 rounded-xl h-11 gap-2 transition-all">
+                      <a href="https://www.linkedin.com/in/turpojamil/" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+                        <Button variant="outline" className="h-11 w-full gap-2 rounded-xl border-border bg-secondary text-foreground/80 transition-all hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-foreground sm:w-auto">
                             <Linkedin className="w-4 h-4" /> LinkedIn
                         </Button>
                       </a>
 
-                      <a href="https://github.com/JTastico" target="_blank" rel="noreferrer">
-                        <Button variant="outline" className="bg-secondary border-border text-foreground/80 hover:text-foreground hover:border-purple-500/50 hover:bg-purple-500/10 rounded-xl h-11 gap-2 transition-all">
+                      <a href="https://github.com/JTastico" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+                        <Button variant="outline" className="h-11 w-full gap-2 rounded-xl border-border bg-secondary text-foreground/80 transition-all hover:border-purple-500/50 hover:bg-purple-500/10 hover:text-foreground sm:w-auto">
                             <Github className="w-4 h-4" /> Github
                         </Button>
                       </a>
                   </div>
 
                   {/* Estadísticas: Años y Proyectos */}
-                  <div className="flex flex-row flex-wrap justify-center md:justify-start gap-8 pt-4 border-t border-border mt-2">
+                  <div className="mt-2 flex flex-wrap justify-center gap-6 border-t border-border pt-4 sm:gap-8 md:justify-start">
                       <div className="flex flex-col items-center md:items-start">
                           <span className="text-3xl font-bold text-foreground flex items-center gap-1">
                             +3 <span className="text-cyan-500 text-lg">{t.portfolio.years}</span>

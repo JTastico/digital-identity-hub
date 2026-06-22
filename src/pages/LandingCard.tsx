@@ -17,7 +17,7 @@ const LandingCard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden flex items-center justify-center p-4 transition-colors duration-300">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 py-6 transition-colors duration-300 sm:px-6 sm:py-8">
       {/* --- Fondo Animado --- */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5" />
@@ -27,7 +27,7 @@ const LandingCard = () => {
       </div>
 
       {/* Controles flotantes (Tema + Idioma) */}
-      <div className="absolute top-4 right-4 z-50 flex gap-2">
+      <div className="absolute right-4 top-4 z-50 flex gap-2 sm:right-6 sm:top-6">
         <Button
           variant="ghost"
           size="sm"
@@ -51,19 +51,19 @@ const LandingCard = () => {
 
       {/* --- TARJETA PRINCIPAL (Horizontal) --- */}
       <div
-        className={`relative z-10 w-full max-w-4xl transition-all duration-1000 ease-out transform ${
+        className={`relative z-10 w-full max-w-5xl transition-all duration-1000 ease-out transform ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}
       >
-        <div className="glass-card-elevated rounded-[2.5rem] overflow-hidden border border-border bg-card/80 backdrop-blur-xl shadow-2xl relative">
+        <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card/80 shadow-2xl backdrop-blur-xl sm:rounded-[2.5rem] glass-card-elevated">
 
           {/* Brillo superior */}
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50" />
 
-          <div className="flex flex-col md:flex-row items-center md:items-stretch">
+          <div className="flex flex-col items-center md:flex-row md:items-stretch">
 
             {/* --- COLUMNA IZQUIERDA: FOTO --- */}
-            <div className="w-full md:w-2/5 p-8 md:p-12 flex items-center justify-center relative">
+            <div className="relative flex w-full items-center justify-center p-6 sm:p-8 md:w-2/5 md:p-12">
               <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent opacity-30 md:rounded-l-[2.5rem]" />
 
               <div className="relative z-10">
@@ -86,38 +86,38 @@ const LandingCard = () => {
             </div>
 
             {/* --- COLUMNA DERECHA: CONTENIDO --- */}
-            <div className="w-full md:w-3/5 p-8 md:py-12 md:pr-12 flex flex-col justify-center text-center md:text-left gap-6">
+            <div className="flex w-full min-w-0 flex-col justify-center gap-6 p-6 text-center sm:p-8 md:w-3/5 md:py-12 md:pr-12 md:text-left">
 
               {/* Info Principal */}
               <div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-2 tracking-tight">
+                <h1 className="mb-2 text-3xl font-bold font-heading tracking-tight text-foreground sm:text-4xl md:text-5xl">
                   {t.landing.greeting} <br className="hidden md:block" />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
                     Turpo Arocutipa
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg text-muted-foreground font-medium">
+                <p className="text-sm font-medium text-muted-foreground sm:text-base md:text-lg">
                   {t.landing.role}
                 </p>
               </div>
 
               {/* Caja de Contacto */}
-              <div className="bg-secondary rounded-2xl p-5 sm:p-6 border border-border shadow-inner space-y-4">
+              <div className="space-y-4 rounded-2xl border border-border bg-secondary p-4 shadow-inner sm:p-5 md:p-6">
                 <a
                   href={`mailto:${t.landing.email}`}
-                  className="flex items-center gap-4 group p-2 rounded-xl hover:bg-foreground/5 transition-colors"
+                  className="group flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-foreground/5 sm:gap-4"
                 >
                   <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform flex-shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <span className="text-foreground/80 text-sm md:text-base truncate">{t.landing.email}</span>
+                  <span className="min-w-0 break-all text-left text-sm text-foreground/80 md:text-base">{t.landing.email}</span>
                 </a>
 
                 <div className="h-px bg-border w-full mx-auto" />
 
                 <a
                   href="tel:+51991010001"
-                  className="flex items-center gap-4 group p-2 rounded-xl hover:bg-foreground/5 transition-colors"
+                  className="group flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-foreground/5 sm:gap-4"
                 >
                   <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform flex-shrink-0">
                     <Phone className="w-5 h-5" />
@@ -127,15 +127,15 @@ const LandingCard = () => {
               </div>
 
               {/* Footer con Redes Sociales (Texto visible) y CTA */}
-              <div className="flex flex-col xl:flex-row gap-4 items-center justify-between pt-2">
+              <div className="flex flex-col items-stretch gap-4 pt-2 xl:flex-row xl:items-center xl:justify-between">
 
                 {/* Botones Sociales con Nombre */}
-                <div className="flex gap-3 w-full xl:w-auto">
+                <div className="flex w-full flex-col gap-3 sm:flex-row xl:w-auto">
                   <a
                     href="https://github.com/JTastico"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-secondary border border-border hover:bg-foreground/10 transition-all text-foreground/80 hover:text-foreground"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-border bg-secondary px-4 py-3 text-foreground/80 transition-all hover:bg-foreground/10 hover:text-foreground xl:flex-none"
                   >
                     <Github className="w-5 h-5" />
                     <span className="font-semibold text-sm">GitHub</span>
@@ -145,7 +145,7 @@ const LandingCard = () => {
                     href="https://www.linkedin.com/in/turpojamil/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-600/10 border border-blue-500/20 hover:bg-blue-600/20 hover:border-blue-500/40 transition-all text-blue-500 hover:text-blue-400"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-blue-500/20 bg-blue-600/10 px-4 py-3 text-blue-500 transition-all hover:border-blue-500/40 hover:bg-blue-600/20 hover:text-blue-400 xl:flex-none"
                   >
                     <Linkedin className="w-5 h-5" />
                     <span className="font-semibold text-sm">LinkedIn</span>
@@ -155,7 +155,7 @@ const LandingCard = () => {
                 {/* Botón CTA Principal */}
                 <Button
                   onClick={() => navigate('/')}
-                  className="w-full xl:w-auto bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl px-8 py-6 font-semibold shadow-[0_0_20px_rgba(6,182,212,0.3)] group border-none"
+                  className="group w-full rounded-xl border-none bg-gradient-to-r from-cyan-600 to-blue-600 px-6 py-5 font-semibold text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:from-cyan-500 hover:to-blue-500 sm:px-8 sm:py-6 xl:w-auto"
                 >
                   <span className="flex items-center gap-2">
                     {t.landing.viewPortfolio}
@@ -165,7 +165,7 @@ const LandingCard = () => {
               </div>
 
               {/* Link pequeño */}
-              <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono mt-1 md:justify-end justify-center">
+              <div className="mt-1 flex items-center justify-center gap-2 text-center font-mono text-xs text-muted-foreground md:justify-end">
                 <LinkIcon className="w-3 h-3" />
                 <span>jamilraul.dev</span>
               </div>

@@ -71,7 +71,7 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden bg-background">
+    <section className="page-section page-shell relative overflow-hidden bg-background">
       {/* Background Decorativo */}
       <div className="absolute inset-0 bg-gradient-to-r from-card/30 via-background to-card/30 opacity-50" />
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(var(--primary-rgb),0.1),transparent_50%)]" />
@@ -82,7 +82,7 @@ const ExperienceSection = () => {
         <div className="floating-orb w-80 h-80 bg-purple-500/5 bottom-0 right-0" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="content-container relative z-10">
 
         {/* Encabezado */}
         <div className="text-center mb-12 animate-slide-up">
@@ -100,7 +100,7 @@ const ExperienceSection = () => {
         </div>
 
         {/* Contenedor de Grilla */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="responsive-card-grid md:grid-cols-2">
 
             {experiences.map((exp, index) => {
               // Recuperar tecnologías basadas en el nombre del proyecto
@@ -134,7 +134,7 @@ const ExperienceSection = () => {
                           {/* Velo para dar profundidad */}
                           <div className="absolute inset-0 bg-gradient-to-tr from-background/60 via-background/10 to-transparent" />
                           {/* Imagen secundaria flotante (estilo móvil) */}
-                          <div className={`absolute bottom-3 h-[56%] max-w-[55%] rounded-lg overflow-hidden border-2 border-card shadow-2xl ring-1 ring-white/10 group-hover:rotate-0 transition-transform duration-500 ${rightLogo ? 'right-3 rotate-3' : 'left-3 -rotate-3'} ${lightLogo ? 'bg-white p-2' : 'bg-card'}`}>
+                          <div className={`absolute bottom-3 h-[52%] max-w-[52%] rounded-lg overflow-hidden border-2 border-card shadow-2xl ring-1 ring-white/10 transition-transform duration-500 group-hover:rotate-0 sm:h-[56%] sm:max-w-[55%] ${rightLogo ? 'right-3 rotate-3' : 'left-3 -rotate-3'} ${lightLogo ? 'bg-white p-2' : 'bg-card'}`}>
                             <img
                               src={images[1]}
                               alt={`${exp.project} - 2`}

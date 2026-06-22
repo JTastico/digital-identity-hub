@@ -35,7 +35,7 @@ const volunteering = [
 
 const EducationSection = () => {
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="page-section page-shell relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
       
@@ -45,8 +45,8 @@ const EducationSection = () => {
         <div className="floating-orb w-64 h-64 bg-pink-500/5 bottom-20 -left-32" style={{ animationDelay: '4s' }} />
       </div>
 
-      <div className="container mx-auto max-w-5xl relative z-10">
-        <div className="grid md:grid-cols-2 gap-12">
+      <div className="content-container-narrow relative z-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
           {/* Education & Certifications */}
           <div className="animate-slide-up">
             <div className="flex items-center gap-4 mb-10">
@@ -61,7 +61,7 @@ const EducationSection = () => {
               </div>
             </div>
 
-            <div className="relative pl-8 space-y-8">
+            <div className="relative space-y-8 pl-8">
               {/* Timeline Line */}
               <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-cyan-400 to-purple-500 rounded-full" />
               
@@ -123,7 +123,7 @@ const EducationSection = () => {
               {volunteering.map((item, index) => (
                 <div 
                   key={index} 
-                  className="glass-card-glow p-5 flex items-start gap-5 group"
+                  className="glass-card-glow group flex items-start gap-4 p-4 sm:gap-5 sm:p-5"
                   style={{ animationDelay: `${(index + 2) * 150}ms` }}
                 >
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">

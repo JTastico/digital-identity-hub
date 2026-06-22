@@ -30,14 +30,14 @@ const GitHubSection = () => {
   const repos = gh.repos.map((repo, i) => ({ ...repo, ...repoMeta[i] }));
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="page-section page-shell relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="floating-orb w-96 h-96 bg-primary/10 -top-40 -left-40" />
         <div className="floating-orb w-80 h-80 bg-purple-500/5 bottom-0 -right-32" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="content-container relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-slide-up">
           <div className="inline-flex items-center justify-center gap-3 mb-4">
@@ -52,7 +52,7 @@ const GitHubSection = () => {
         </div>
 
         {/* Profile + Stats */}
-        <div className="grid lg:grid-cols-3 gap-6 mb-8">
+        <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* Profile Card */}
           <div className="glass-card-elevated p-6 animate-slide-up flex flex-col items-center text-center">
             <div className="relative mb-4">
@@ -94,7 +94,7 @@ const GitHubSection = () => {
           </div>
 
           {/* Stats grid */}
-          <div className="lg:col-span-2 grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-2 lg:gap-6">
             {stats.map((s, i) => (
               <div
                 key={i}
@@ -144,7 +144,7 @@ const GitHubSection = () => {
             </div>
             <h3 className="text-lg font-bold text-foreground font-heading">{gh.reposTitle}</h3>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {repos.map((repo, i) => (
               <a
                 key={i}

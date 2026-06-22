@@ -57,7 +57,7 @@ const VirtualCard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden py-8 px-4">
+    <div className="relative min-h-screen overflow-hidden bg-background px-4 py-6 sm:px-6 sm:py-8">
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.15),transparent_60%)]" />
@@ -72,7 +72,7 @@ const VirtualCard = () => {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
 
-      <div className="container mx-auto max-w-lg relative z-10">
+      <div className="relative z-10 mx-auto w-full max-w-xl">
         {/* Main Card */}
         <div 
           className={`glass-card-elevated rounded-3xl overflow-hidden transition-all duration-700 ${
@@ -102,7 +102,7 @@ const VirtualCard = () => {
           </div>
 
           {/* Content */}
-          <div className="px-6 pt-16 pb-6">
+          <div className="px-4 pb-5 pt-16 sm:px-6 sm:pb-6">
             {/* Name & Title */}
             <div className="text-center mb-6 animate-fade-in" style={{ animationDelay: '200ms' }}>
               <h1 className="text-2xl font-bold font-heading mb-1">
@@ -117,22 +117,22 @@ const VirtualCard = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col gap-2 mb-6 animate-fade-in" style={{ animationDelay: '300ms' }}>
+            <div className="mb-6 flex flex-col gap-2 animate-fade-in" style={{ animationDelay: '300ms' }}>
               <a 
                 href="mailto:jamilturpoarocutipa@gmail.com" 
-                className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all group"
+                className="group flex items-center gap-3 rounded-xl border border-border/50 bg-card/50 px-3 py-2.5 transition-all hover:border-primary/50 hover:bg-primary/5 sm:px-4"
               >
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-sm text-foreground/80 group-hover:text-foreground transition-colors truncate">
+                <span className="min-w-0 break-all text-sm text-foreground/80 transition-colors group-hover:text-foreground">
                   jamilturpoarocutipa@gmail.com
                 </span>
               </a>
               
               <a 
                 href="tel:+51991010001" 
-                className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all group"
+                className="group flex items-center gap-3 rounded-xl border border-border/50 bg-card/50 px-3 py-2.5 transition-all hover:border-primary/50 hover:bg-primary/5 sm:px-4"
               >
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Phone className="w-4 h-4 text-primary" />
@@ -144,12 +144,12 @@ const VirtualCard = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-3 mb-6 animate-fade-in" style={{ animationDelay: '400ms' }}>
+            <div className="mb-6 flex flex-col gap-3 sm:flex-row animate-fade-in" style={{ animationDelay: '400ms' }}>
               <a 
                 href="https://github.com/JTastico" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-gray-800 to-gray-900 border border-gray-700 hover:border-gray-500 hover:scale-[1.02] transition-all group"
+                className="group flex flex-1 items-center justify-center gap-2 rounded-xl border border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900 px-4 py-3 transition-all hover:scale-[1.02] hover:border-gray-500"
               >
                 <Github className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-medium text-white">GitHub</span>
@@ -160,7 +160,7 @@ const VirtualCard = () => {
                 href="https://www.linkedin.com/in/turpojamil/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#0077B5] to-[#0066A2] border border-[#0088CC] hover:border-[#00AAEE] hover:scale-[1.02] transition-all group"
+                className="group flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#0088CC] bg-gradient-to-r from-[#0077B5] to-[#0066A2] px-4 py-3 transition-all hover:scale-[1.02] hover:border-[#00AAEE]"
               >
                 <Linkedin className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-medium text-white">LinkedIn</span>
@@ -233,7 +233,7 @@ const VirtualCard = () => {
             {/* QR Code Section */}
             <div className="animate-fade-in" style={{ animationDelay: '800ms' }}>
               <div className="glass-card-glow p-4 rounded-2xl">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
                       <QrCode className="w-4 h-4 text-primary animate-pulse-glow" />
@@ -254,7 +254,7 @@ const VirtualCard = () => {
                   </div>
                   
                   {/* QR Code */}
-                  <div className="relative group">
+                  <div className="relative mx-auto group sm:mx-0">
                     <div className="absolute -inset-2 bg-gradient-to-br from-primary/40 to-purple-500/40 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative bg-white p-2 rounded-xl group-hover:scale-105 transition-transform">
                       <QRCodeSVG
@@ -273,8 +273,8 @@ const VirtualCard = () => {
           </div>
 
           {/* Footer */}
-          <div className="px-6 py-4 border-t border-border/30 bg-card/30">
-            <p className="text-center text-xs text-muted-foreground">
+          <div className="border-t border-border/30 bg-card/30 px-4 py-4 sm:px-6">
+            <p className="text-center text-xs leading-relaxed text-muted-foreground">
               <span className="gradient-text font-medium">Turpo Arocutipa, Jamil Raúl</span> • Tarjeta Virtual 2025
             </p>
           </div>

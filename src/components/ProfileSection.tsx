@@ -1,8 +1,12 @@
+import { useEffect, useState } from "react";
 import { User, Code, Briefcase, Target, Rocket } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 
 const ProfileSection = () => {
   const { t } = useLanguage();
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [currentStatIndex, setCurrentStatIndex] = useState(0);
 
   // Reconstruimos el array de stats usando las traducciones
   const stats = [
@@ -26,18 +30,35 @@ const ProfileSection = () => {
     },
   ];
 
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    const onSelect = () => {
+      setCurrentStatIndex(carouselApi.selectedScrollSnap());
+    };
+
+    onSelect();
+    carouselApi.on("select", onSelect);
+    carouselApi.on("reInit", onSelect);
+
+    return () => {
+      carouselApi.off("select", onSelect);
+      carouselApi.off("reInit", onSelect);
+    };
+  }, [carouselApi]);
+
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="page-section page-shell relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="floating-orb w-64 h-64 bg-primary/5 -top-32 right-0" />
         <div className="floating-orb w-48 h-48 bg-purple-500/5 bottom-0 left-20" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto max-w-4xl relative z-10">
-        <div className="glass-card-elevated p-8 md:p-12 animate-slide-up">
+      <div className="content-container mx-auto max-w-4xl relative z-10">
+        <div className="glass-card-elevated animate-slide-up p-6 sm:p-8 md:p-12">
           {/* Header */}
-          <div className="flex items-center gap-4 mb-8">
+          <div className="mb-8 flex items-start gap-4 sm:items-center">
             <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-cyan-500/20 flex items-center justify-center animate-pulse-glow">
               <User className="w-7 h-7 text-primary" />
             </div>
@@ -58,7 +79,43 @@ const ProfileSection = () => {
           </div>
 
           {/* Quick stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 pt-10 border-t border-border/30">
+          <div className="mt-10 border-t border-border/30 pt-10 md:hidden">
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              setApi={setCarouselApi}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-3">
+                {stats.map((stat, index) => (
+                  <CarouselItem key={index} className="pl-3">
+                    <div className="group cursor-grab active:cursor-grabbing rounded-2xl border border-border/30 bg-card/30 px-5 py-6 text-center">
+                      <div className={`mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${stat.color} p-0.5 transition-transform duration-300 group-hover:scale-110`}>
+                        <div className="flex h-full w-full items-center justify-center rounded-2xl bg-card">
+                          <stat.icon className="h-7 w-7 text-foreground transition-colors group-hover:text-primary" />
+                        </div>
+                      </div>
+                      <p className="font-heading text-2xl font-bold text-foreground transition-all group-hover:gradient-text">{stat.title}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{stat.subtitle}</p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            <div className="mt-4 flex items-center justify-center gap-2">
+              {stats.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  aria-label={`${t.profile.title} ${index + 1}`}
+                  onClick={() => carouselApi?.scrollTo(index)}
+                  className={`h-2.5 rounded-full transition-all ${currentStatIndex === index ? "w-6 bg-primary" : "w-2.5 bg-border"}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-10 hidden grid-cols-1 gap-6 border-t border-border/30 pt-10 md:grid md:grid-cols-3">
             {stats.map((stat, index) => (
               <div 
                 key={index}
