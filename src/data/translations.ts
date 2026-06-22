@@ -92,11 +92,11 @@ export const translations = {
           period: "Junio 2025 – Enero 2026",
           images: ["/dots/dashboard.webp", "/dots/logo.webp"],
           link: "https://devdotfrontend.onrender.com/",
-          description: "Juego multijugador en tiempo real para aprender los rombos NFPA 704, evaluando el reconocimiento de los distintos rombos de seguridad.",
+          description: "Plataforma web de aprendizaje orientada a reforzar el reconocimiento de los rombos NFPA 704. Lideré la organización del equipo, la planificación del trabajo, la definición de prioridades y el seguimiento de entregables durante el desarrollo del producto.",
           highlights: [
-            "Dirección de equipo multidisciplinario",
-            "Rediseño de arquitectura y dashboards interactivos",
-            "Integración de APIs y despliegue en entornos productivos"
+            "Coordinación de equipo multidisciplinario y distribución de tareas",
+            "Planificación de sprints, prioridades y seguimiento del avance",
+            "Validación funcional del producto y alineación de entregables"
           ]
         },
         {
@@ -326,11 +326,11 @@ export const translations = {
           period: "June 2025 – January 2026",
           images: ["/dots/dashboard.webp", "/dots/logo.webp"],
           link: "https://devdotfrontend.onrender.com/",
-          description: "A real-time multiplayer game to learn the NFPA 704 diamonds, testing recognition of the different safety diamonds.",
+          description: "A web learning platform focused on strengthening recognition of NFPA 704 diamonds. I led team organization, work planning, priority setting, and deliverable follow-up throughout product development.",
           highlights: [
-            "Leading a multidisciplinary team",
-            "Redesigning architecture and interactive dashboards",
-            "Integrating APIs and deploying in production environments"
+            "Coordinating a multidisciplinary team and task allocation",
+            "Planning sprints, priorities, and progress follow-up",
+            "Validating product functionality and aligning deliverables"
           ]
         },
         {

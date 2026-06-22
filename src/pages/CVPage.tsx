@@ -84,12 +84,12 @@ const experiences = [
     title: "Líder de Proyecto",
     project: "Dot's Go - Plataforma Web de Aprendizaje",
     company: "Proyecto Académico",
-    period: "Junio 2025 – Actualidad",
+    period: "Junio 2025 – Enero 2026",
     tech: ["React", "Node.js", "MongoDB", "Kanban"],
     highlights: [
-      "Dirección de equipo multidisciplinario",
-      "Rediseño de arquitectura y dashboards interactivos",
-      "Integración de APIs y despliegue en entornos productivos"
+      "Coordinación de equipo multidisciplinario y distribución de tareas",
+      "Planificación de sprints, prioridades y seguimiento del avance",
+      "Validación funcional del producto y alineación de entregables"
     ]
   },
   {
