@@ -363,7 +363,7 @@ const CVPage = () => {
             Habilidades Blandas
           </h2>
           
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             {softSkills.map((skill, index) => (
               <div key={index} className="flex items-center gap-2 p-3 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
                 <skill.icon className="w-4 h-4 text-primary" />

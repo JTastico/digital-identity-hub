@@ -61,7 +61,7 @@ const SoftSkillsSection = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="mb-16 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+        <div className="mb-16 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
             const color = skillColors[index] || "from-gray-500 to-slate-400"; // Fallback color
