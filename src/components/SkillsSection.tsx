@@ -141,18 +141,14 @@ const SkillsSection = () => {
                     return (
                       <div 
                         key={i} 
-                        className="group/badge relative flex aspect-square min-h-[110px] flex-col items-center justify-center gap-4 rounded-2xl border border-border/50 bg-background/40 p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5"
+                        className="group/badge relative flex aspect-square min-h-[110px] flex-col items-center justify-center gap-5 rounded-2xl border border-border/50 bg-background/40 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5"
                         style={{ animationDelay: `${(index * 100) + (i * 50)}ms` }}
                       >
-                        <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${category.gradient} p-0.5`}>
-                          <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-card">
-                            <IconComponent 
-                              className="h-5 w-5 transition-all duration-300 group-hover/badge:scale-110" 
-                              style={{ color: skill.color }}
-                            />
-                          </div>
-                        </div>
-                        <span className="text-sm font-medium leading-tight text-foreground/90 group-hover/badge:text-foreground">
+                        <IconComponent 
+                          className="h-9 w-9 transition-all duration-300 group-hover/badge:scale-110 sm:h-10 sm:w-10" 
+                          style={{ color: skill.color }}
+                        />
+                        <span className="text-base font-semibold leading-tight text-foreground/90 group-hover/badge:text-foreground">
                           {skill.name}
                         </span>
                       </div>
