@@ -93,13 +93,13 @@ const SoftSkillsSection = () => {
 
         {/* Languages Section */}
         <div className="flex justify-center animate-slide-up" style={{ animationDelay: '400ms' }}>
-          <div className="glass-card-elevated group flex w-full max-w-2xl flex-col gap-4 px-5 py-5 transition-transform duration-300 hover:scale-105 sm:flex-row sm:items-center sm:gap-6 sm:px-8 sm:py-6">
+          <div className="glass-card-elevated group flex w-full max-w-2xl flex-col items-center justify-center gap-4 px-5 py-5 text-center transition-transform duration-300 hover:scale-105 sm:gap-6 sm:px-8 sm:py-6">
             <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center group-hover:animate-bounce-subtle">
               <Globe className="w-7 h-7 text-primary" />
             </div>
-            <div className="text-center sm:text-left">
+            <div className="text-center">
               <p className="text-sm text-muted-foreground mb-1">{currentLang.title}</p>
-              <div className="mt-1 flex items-center justify-center gap-3 sm:justify-start">
+              <div className="mt-1 flex items-center justify-center gap-3">
                 <span className="font-bold text-foreground text-lg">{currentLang.langName}</span>
                 <span className="text-muted-foreground">—</span>
                 <span className="text-primary font-semibold">{currentLang.level}</span>
@@ -107,7 +107,7 @@ const SoftSkillsSection = () => {
             </div>
             
             {/* Language Badges */}
-            <div className="flex justify-center sm:ml-auto sm:justify-end">
+            <div className="flex justify-center">
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20">
                 <Heart className="w-4 h-4 text-primary" />
                 <span className="text-xs font-medium text-foreground">{currentLang.badge}</span>
