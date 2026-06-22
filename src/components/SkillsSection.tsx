@@ -121,38 +121,49 @@ const SkillsSection = () => {
               className="glass-card-glow group p-5 sm:p-6"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
-                  <div className="w-full h-full rounded-xl bg-card flex items-center justify-center">
-                    <category.icon className="w-5 h-5 text-foreground" />
+              <div className="mb-5 flex items-center gap-3">
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${category.gradient} p-0.5 transition-transform duration-300 group-hover:scale-110`}>
+                  <div className="flex h-full w-full items-center justify-center rounded-xl bg-card">
+                    <category.icon className="h-5 w-5 text-foreground" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground font-heading group-hover:text-primary transition-colors">
-                  {category.title}
-                </h3>
+                <div>
+                  <h3 className="font-heading text-xl font-bold text-foreground transition-colors group-hover:text-primary">
+                    {category.title}
+                  </h3>
+                </div>
               </div>
-              
-              {/* Skills Grid */}
-              <div className="flex flex-wrap gap-3">
-                {category.skills.map((skill, i) => {
-                  const IconComponent = skill.icon;
-                  return (
-                    <div 
-                      key={i} 
-                      className="icon-badge group/badge"
-                      style={{ animationDelay: `${(index * 100) + (i * 50)}ms` }}
-                    >
-                      <IconComponent 
-                        className="icon w-5 h-5 transition-all duration-300" 
-                        style={{ color: skill.color }}
-                      />
-                      <span className="text-sm font-medium text-foreground/90 group-hover/badge:text-foreground">
-                        {skill.name}
-                      </span>
-                    </div>
-                  );
-                })}
+
+              <div className="rounded-2xl border border-border/50 bg-card/20 p-4 sm:p-5">
+                <p className="mb-4 text-left text-sm font-semibold uppercase tracking-wide text-foreground/80">
+                  {category.title}
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {category.skills.map((skill, i) => {
+                    const IconComponent = skill.icon;
+
+                    return (
+                      <div 
+                        key={i} 
+                        className="group/badge relative flex aspect-square min-h-[110px] flex-col justify-between rounded-2xl border border-border/50 bg-background/40 p-3 text-left transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/5"
+                        style={{ animationDelay: `${(index * 100) + (i * 50)}ms` }}
+                      >
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${category.gradient} p-0.5`}>
+                          <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-card">
+                            <IconComponent 
+                              className="h-5 w-5 transition-all duration-300 group-hover/badge:scale-110" 
+                              style={{ color: skill.color }}
+                            />
+                          </div>
+                        </div>
+                        <span className="text-sm font-medium leading-tight text-foreground/90 group-hover/badge:text-foreground">
+                          {skill.name}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           ))}
