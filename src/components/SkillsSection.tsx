@@ -134,12 +134,7 @@ const SkillsSection = () => {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-border/50 bg-card/20 p-4 sm:p-5">
-                <p className="mb-4 text-left text-sm font-semibold uppercase tracking-wide text-foreground/80">
-                  {category.title}
-                </p>
-
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {category.skills.map((skill, i) => {
                     const IconComponent = skill.icon;
 
@@ -163,7 +158,6 @@ const SkillsSection = () => {
                       </div>
                     );
                   })}
-                </div>
               </div>
             </div>
           ))}
