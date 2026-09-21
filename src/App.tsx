@@ -6,6 +6,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { RouteTransition } from "@/components/common/RouteTransition";
 
 // Code-splitting: cada ruta se carga bajo demanda
 const Portfolio = lazy(() => import("./pages/Portfolio"));
@@ -31,18 +32,20 @@ const App = () => (
           <Sonner />
           <HashRouter>
             <Suspense fallback={<PageLoader />}>
-              <Routes>
-                {/* La raíz muestra el portafolio completo directamente */}
-                <Route path="/" element={<Portfolio />} />
-                {/* Alias por compatibilidad (enlaces previos / QR / botón "Volver" del CV) */}
-                <Route path="/detalles" element={<Portfolio />} />
-                {/* Tarjeta de presentación (antes era la raíz) */}
-                <Route path="/tarjeta" element={<LandingCard />} />
-                <Route path="/cv" element={<CVPage />} />
-                <Route path="/tarjeta-virtual" element={<VirtualCard />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <RouteTransition>
+                <Routes>
+                  {/* La raíz muestra el portafolio completo directamente */}
+                  <Route path="/" element={<Portfolio />} />
+                  {/* Alias por compatibilidad (enlaces previos / QR / botón "Volver" del CV) */}
+                  <Route path="/detalles" element={<Portfolio />} />
+                  {/* Tarjeta de presentación (antes era la raíz) */}
+                  <Route path="/tarjeta" element={<LandingCard />} />
+                  <Route path="/cv" element={<CVPage />} />
+                  <Route path="/tarjeta-virtual" element={<VirtualCard />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </RouteTransition>
             </Suspense>
           </HashRouter>
         </LanguageProvider>

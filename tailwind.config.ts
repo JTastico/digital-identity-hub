@@ -67,7 +67,14 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      transitionTimingFunction: {
+        smooth: "var(--ease-out)",
+      },
       keyframes: {
+        "page-in": {
+          from: { opacity: "0", transform: "translateY(8px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -127,6 +134,8 @@ export default {
         },
       },
       animation: {
+        // "backwards": no deja un transform residual (rompería los hijos con position: fixed)
+        "page-in": "page-in 0.45s var(--ease-out) backwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 6s ease-in-out infinite",

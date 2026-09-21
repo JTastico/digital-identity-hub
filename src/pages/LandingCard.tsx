@@ -1,20 +1,13 @@
-import { useState, useEffect } from "react";
-import { Github, Linkedin, ArrowRight, Sparkles, Mail, Phone, Link as LinkIcon, Globe, Moon, Sun } from "lucide-react";
+import { Github, Linkedin, ArrowRight, Sparkles, Mail, Phone, Link as LinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import profileImage from "@/assets/jamil-profile.png";
 import { useLanguage } from "@/context/LanguageContext";
-import { useTheme } from "@/context/ThemeContext";
+import { PreferenceToggles } from "@/components/common/PreferenceToggles";
 
 const LandingCard = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
-  const { t, language, toggleLanguage } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+  const { t } = useLanguage();
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 py-6 transition-colors duration-300 sm:px-6 sm:py-8">
@@ -27,34 +20,10 @@ const LandingCard = () => {
       </div>
 
       {/* Controles flotantes (Tema + Idioma) */}
-      <div className="absolute right-4 top-4 z-50 flex gap-2 sm:right-6 sm:top-6">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={toggleTheme}
-          aria-label={theme === "dark" ? "Activar tema claro" : "Activar tema oscuro"}
-          className="text-muted-foreground hover:text-foreground hover:bg-foreground/10 rounded-full border border-border backdrop-blur-sm"
-        >
-          {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-        </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={toggleLanguage}
-          aria-label="Cambiar idioma"
-          className="text-muted-foreground hover:text-foreground hover:bg-foreground/10 rounded-full border border-border font-mono text-xs backdrop-blur-sm"
-        >
-            <Globe className="w-3 h-3 mr-2" />
-            {language}
-        </Button>
-      </div>
+      <PreferenceToggles className="absolute right-4 top-4 z-50 sm:right-6 sm:top-6" />
 
       {/* --- TARJETA PRINCIPAL (Horizontal) --- */}
-      <div
-        className={`relative z-10 w-full max-w-5xl transition-all duration-1000 ease-out transform ${
-          isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-        }`}
-      >
+      <div className="relative z-10 w-full max-w-5xl">
         <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card/80 shadow-2xl backdrop-blur-xl sm:rounded-[2.5rem] glass-card-elevated">
 
           {/* Brillo superior */}

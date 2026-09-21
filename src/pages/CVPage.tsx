@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { 
-  Mail, Phone, Github, Linkedin, MapPin, Globe, ArrowLeft,
+import {
+  Mail, Phone, Github, Linkedin, MapPin, Globe, ArrowLeft, ExternalLink,
   Briefcase, GraduationCap, Code, Heart, Users, Award,
   MessageCircle, RefreshCw, Crown, Lightbulb, Brain, Clock, Target
 } from "lucide-react";
@@ -15,6 +15,7 @@ import { FaAws } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import profileImage from "@/assets/jamil-profile.png";
+import { translations } from "@/data/translations";
 
 const techCategories = [
   {
@@ -67,56 +68,8 @@ const techCategories = [
   }
 ];
 
-const experiences = [
-  {
-    title: "Desarrollador Backend",
-    project: "Sistema de Gestión de Riesgos",
-    company: "Laboratorios La Cooper",
-    period: "Abril 2024 – Agosto 2024",
-    tech: ["PHP", "Laravel", "MySQL"],
-    highlights: [
-      "Desarrollo de sistema integral de gestión de riesgos",
-      "Implementación de flujos de validación y seguridad de datos",
-      "Coordinación con auditores internos y externos"
-    ]
-  },
-  {
-    title: "Líder de Proyecto",
-    project: "Dot's Go - Plataforma Web de Aprendizaje",
-    company: "Proyecto Académico",
-    period: "Junio 2025 – Enero 2026",
-    tech: ["React", "Node.js", "MongoDB", "Kanban"],
-    highlights: [
-      "Coordinación de equipo multidisciplinario y distribución de tareas",
-      "Planificación de sprints, prioridades y seguimiento del avance",
-      "Validación funcional del producto y alineación de entregables"
-    ]
-  },
-  {
-    title: "Desarrollador Full Stack",
-    project: "CodeLink - Red Social para Desarrolladores",
-    company: "Proyecto Personal",
-    period: "Junio 2025 – Agosto 2025",
-    tech: ["iOS", "SwiftUI", "Firebase"],
-    highlights: [
-      "Autenticación, perfiles y publicaciones dinámicas",
-      "Servicios en tiempo real y diseño UX",
-      "Arquitectura escalable para aplicación móvil"
-    ]
-  },
-  {
-    title: "Líder de Proyecto",
-    project: "Rueda de Problemas - Asignación Estratégica de Fondos",
-    company: "OCEAN S.R.L",
-    period: "Octubre 2025 – Noviembre 2025",
-    tech: ["Gestión", "Análisis", "Coordinación"],
-    highlights: [
-      "Levantamiento de requerimientos y reuniones con clientes",
-      "Coordinación de mejoras y validación de entregables",
-      "Gestión de comunicación con stakeholders"
-    ]
-  }
-];
+// Misma fuente que el portafolio: evita que el CV y la web se desincronicen
+const experiences = translations.ES.experience.items;
 
 const education = [
   {
@@ -263,8 +216,11 @@ const CVPage = () => {
                 <div className="mb-2">
                   <h3 className="text-lg font-semibold text-foreground">{exp.title}</h3>
                   <p className="text-primary font-medium">{exp.project}</p>
-                  <p className="text-sm text-muted-foreground">{exp.company} • {exp.period}</p>
+                  <p className="text-sm text-muted-foreground">{[exp.company, exp.period].filter(Boolean).join(" • ")}</p>
                 </div>
+                {exp.description && (
+                  <p className="text-sm text-foreground/70 leading-relaxed mb-3">{exp.description}</p>
+                )}
                 <div className="flex flex-wrap gap-2 mb-3">
                   {exp.tech.map((tech, i) => (
                     <span key={i} className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary font-medium">
@@ -280,6 +236,18 @@ const CVPage = () => {
                     </li>
                   ))}
                 </ul>
+                {exp.link && (
+                  <a
+                    href={exp.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                  >
+                    <Globe className="w-3.5 h-3.5" />
+                    Visitar proyecto
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
               </div>
             ))}
           </div>

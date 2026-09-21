@@ -1,20 +1,27 @@
-import { 
-  Code, Briefcase, Target, Users, GitBranch, ClipboardList, 
-  MessageCircle, RefreshCw, Crown, Lightbulb, Calendar, Globe,
-  Brain, Clock, Scale, Sparkles, Heart
+import {
+  MessageCircle, RefreshCw, Crown, Lightbulb, Calendar,
+  Brain, Clock, Scale, Users
 } from "lucide-react";
+
+/*
+  Convención de cada proyecto (experience.items):
+  - description: qué ES el producto.
+  - highlights:  qué hice YO / alcance de mi trabajo.
+  - tech:        etiquetas de tecnología que se muestran en la tarjeta.
+  - period / link / images: opcionales (cadena o lista vacía = no se muestra).
+*/
 
 export const translations = {
   ES: {
     hero: {
-      role: "Desarrollador Full Stack & Gestor de Proyectos",
+      role: "Desarrollador Full Stack y Gestor de Proyectos",
       cta: "Ver Portafolio",
       linkedIn: "LinkedIn",
       github: "GitHub"
     },
     landing: {
       greeting: "Jamil Raúl",
-      role: "Desarrollador Full Stack & Gestor de Proyectos",
+      role: "Desarrollador Full Stack y Gestor de Proyectos",
       email: "jamilturpoarocutipa@gmail.com",
       viewPortfolio: "Ver Portafolio"
     },
@@ -28,7 +35,7 @@ export const translations = {
     profile: {
       title: "Perfil Profesional",
       subtitle: "Sobre mí",
-      description: "Profesional en Diseño y Desarrollo de Software, especializado en desarrollo Full Stack y gestión de proyectos tecnológicos. Lidero proyectos de principio a fin —web, sistemas empresariales y móvil multiplataforma— asegurando calidad y cumplimiento de plazos con metodologías ágiles como Scrum y Kanban.",
+      description: "Desarrollador Full Stack y gestor de proyectos con formación en Diseño y Desarrollo de Software. Construyo aplicaciones web, sistemas empresariales y apps móviles, del backend a la interfaz, con arquitectura hexagonal y código limpio. También lidero proyectos con Scrum y Kanban para entregar con calidad y a tiempo.",
       stats: {
         fullstack: { title: "Full Stack", subtitle: "Desarrollo" },
         leader: { title: "Líder", subtitle: "Proyectos" },
@@ -37,12 +44,40 @@ export const translations = {
     },
     experience: {
       title: "Trayectoria Profesional",
-      subtitle: "Proyectos destacados agrupados por especialidad",
-      current: "Actualmente",
+      subtitle: "Proyectos que he diseñado, desarrollado o liderado",
       detailsSoon: "Detalles próximamente",
-      aboutLabel: "Sobre el proyecto",
       visitProject: "Visitar proyecto",
       items: [
+        {
+          title: "Desarrollador Full Stack",
+          project: "Encuentro Anual PIU",
+          company: "Aplicación web",
+          period: "",
+          images: [],
+          link: "https://jamilturpo.entiendepiu.com/",
+          tech: ["Hexagonal"],
+          description: "Plataforma del Encuentro Anual PIU, desarrollada de principio a fin: del diseño de la interfaz al backend.",
+          highlights: [
+            "Diseño de la interfaz y la experiencia de usuario",
+            "Optimización de componentes de frontend",
+            "Backend completo con arquitectura hexagonal"
+          ]
+        },
+        {
+          title: "Desarrollador Full Stack",
+          project: "Zefiron",
+          company: "NAVIA",
+          period: "Enero 2026 – Junio 2026",
+          images: ["/zefiron/welcome.webp"],
+          link: "https://zefiron.com/es",
+          tech: ["Flutter", "FastAPI", "Hexagonal"],
+          description: "Plataforma inmobiliaria impulsada por IA que reúne CRM, gestión de proyectos, pipeline de ventas y cobranzas para inmobiliarias.",
+          highlights: [
+            "Aplicación multiplataforma en Flutter con arquitectura hexagonal",
+            "Backend en FastAPI con arquitectura hexagonal",
+            "6 meses de desarrollo continuo con código limpio y escalable"
+          ]
+        },
         {
           title: "Desarrollador Frontend",
           project: "Alianza Valorem",
@@ -50,11 +85,12 @@ export const translations = {
           period: "Febrero 2026 – Marzo 2026",
           images: ["/alianzavalorem/welcome.webp", "/alianzavalorem/logo.webp"],
           link: "https://alianzavalorem.com/",
-          description: "Diseñé y desarrollé por completo la landing page de Alianza Valorem, desde la interfaz y la experiencia de usuario hasta el código, usando Astro para lograr una web moderna, veloz y optimizada para SEO.",
+          tech: ["Astro", "TailwindCSS"],
+          description: "Landing page de Alianza Valorem, diseñada y desarrollada desde cero con Astro: moderna, veloz y optimizada para SEO.",
           highlights: [
-            "Diseño y desarrollo integral de la landing",
-            "Interfaz moderna y responsive",
-            "Optimizada para rendimiento y SEO con Astro"
+            "Diseño de la interfaz y desarrollo completo del sitio",
+            "Sitio responsive y de carga veloz",
+            "SEO y rendimiento optimizados con Astro"
           ]
         },
         {
@@ -64,11 +100,12 @@ export const translations = {
           period: "Octubre 2025 – Noviembre 2025",
           images: ["/ruedaproblemas/welcome.webp", "/ruedaproblemas/logo.svg"],
           link: "https://ruedadeproblemas.pe/",
-          description: "Plataforma que conecta problemas reales de los sectores productivo, gubernamental y social con capacidades de investigación e innovación para generar proyectos I+D+i+e con potencial de financiamiento. Lideré la planificación, reuniones, requerimientos y la gestión de sprints y revisiones.",
+          tech: ["Gestión", "Análisis", "Scrum"],
+          description: "Plataforma que conecta problemas reales de los sectores productivo, gubernamental y social con capacidades de investigación e innovación, para generar proyectos I+D+i+e con potencial de financiamiento.",
           highlights: [
             "Asignación de Fondos de Canon",
-            "Levantamiento de requerimientos y reuniones con clientes",
-            "Validación de entregables finales"
+            "Planificación, requerimientos y reuniones con clientes",
+            "Gestión de sprints, revisiones y validación de entregables"
           ]
         },
         {
@@ -78,11 +115,12 @@ export const translations = {
           period: "Julio 2025 – Septiembre 2025",
           images: ["/sosensenas/movil.webp", "/sosensenas/logo.svg"],
           link: "https://sosenseñas.com",
-          description: "Aplicación Android de reconocimiento de señas para mujeres embarazadas sordosignantes, facilitando su comunicación.",
+          tech: ["Android", "Kotlin", "ML"],
+          description: "Aplicación Android que reconoce lenguaje de señas para facilitar la comunicación de mujeres embarazadas sordosignantes.",
           highlights: [
-            "Reconocimiento de lenguaje de señas",
-            "Orientado a mujeres embarazadas sordosignantes",
-            "Desarrollo nativo en Android"
+            "Desarrollo nativo en Android con Kotlin",
+            "Reconocimiento de lenguaje de señas con ML",
+            "Enfoque en accesibilidad e inclusión"
           ]
         },
         {
@@ -92,11 +130,12 @@ export const translations = {
           period: "Junio 2025 – Enero 2026",
           images: ["/dots/dashboard.webp", "/dots/logo.webp"],
           link: "https://devdotfrontend.onrender.com/",
-          description: "Plataforma web de aprendizaje orientada a reforzar el reconocimiento de los rombos NFPA 704. Lideré la organización del equipo, la planificación del trabajo, la definición de prioridades y el seguimiento de entregables durante el desarrollo del producto.",
+          tech: ["React", "Node.js", "MongoDB", "Scrum"],
+          description: "Plataforma web de aprendizaje para reforzar el reconocimiento de los rombos NFPA 704, desarrollada en equipo bajo Scrum.",
           highlights: [
-            "Coordinación de equipo multidisciplinario y distribución de tareas",
+            "Coordinación de un equipo multidisciplinario y reparto de tareas",
             "Planificación de sprints, prioridades y seguimiento del avance",
-            "Validación funcional del producto y alineación de entregables"
+            "Validación funcional y alineación de entregables"
           ]
         },
         {
@@ -106,25 +145,27 @@ export const translations = {
           period: "Junio 2025 – Agosto 2025",
           images: ["/codelink/content.webp", "/codelink/login.webp"],
           link: "",
-          description: "Red social para programadores: permite pedir ayuda sobre programación a cualquier persona del mundo, con publicaciones generales o consultas por mensaje privado.",
+          tech: ["iOS", "SwiftUI", "Firebase"],
+          description: "Red social para programadores: permite pedir ayuda a cualquier persona del mundo, con publicaciones abiertas o mensajes privados.",
           highlights: [
             "Autenticación y perfiles dinámicos",
-            "Servicios en tiempo real (Chat/Feeds)",
-            "Diseño enfocado en UX móvil"
+            "Chat y feed en tiempo real",
+            "Diseño centrado en la experiencia móvil"
           ]
         },
         {
           title: "Desarrollador .NET",
           project: "Juanjo",
-          company: "Archery & Lenguage School",
+          company: "Archery & Language School",
           period: "Septiembre 2024 – Diciembre 2024",
           images: [],
           link: "",
-          description: "Sistema de reserva de cursos de arquería: gestiona horarios, la cantidad de alumnos por docente y la automatización de turnos.",
+          tech: [".NET", "Clean Arch", "C#", "Swagger"],
+          description: "Sistema de reservas de cursos de arquería: gestiona horarios, la cantidad de alumnos por docente y la automatización de turnos.",
           highlights: [
-            "Implementación de Arquitectura Hexagonal",
+            "Implementación de arquitectura hexagonal",
             "Optimización del registro de alumnos",
-            "Automatización de gestión administrativa"
+            "Automatización de la gestión administrativa"
           ]
         },
         {
@@ -134,10 +175,11 @@ export const translations = {
           period: "Abril 2024 – Agosto 2024",
           images: [],
           link: "",
-          description: "Gestor de riesgos para una fábrica: registra problemas y deficiencias, y hace llegar requerimientos de mejora en seguridad a los encargados correspondientes.",
+          tech: ["PHP", "Laravel", "MySQL"],
+          description: "Sistema para una fábrica que registra problemas y deficiencias, y hace llegar los requerimientos de mejora en seguridad a los responsables.",
           highlights: [
-            "Desarrollo de sistema integral de gestión de riesgos",
-            "Implementación de flujos de validación y seguridad de datos",
+            "Sistema integral de gestión de riesgos",
+            "Flujos de validación y seguridad de datos",
             "Coordinación con auditores internos y externos"
           ]
         }
@@ -145,19 +187,27 @@ export const translations = {
     },
     skills: {
       title: "Habilidades Técnicas",
-      subtitle: "Stack tecnológico y herramientas de desarrollo que domino",
+      subtitle: "Tecnologías y herramientas con las que construyo productos, del frontend al backend",
       categories: {
         frontend: "Frontend",
         backend: "Backend",
         database: "Bases de Datos",
-        mobile: "Móvil",
         tools: "Herramientas",
-        methodologies: "Metodologías"
+        methodologies: "Metodologías y Arquitectura",
+        mobile: "Móvil y Multiplataforma"
+      },
+      methods: {
+        scrum: "Scrum",
+        sprints: "Sprints",
+        kanban: "Kanban",
+        hexagonal: "Hexagonal",
+        projectManagement: "Gestión de Proyectos",
+        requirements: "Requisitos"
       }
     },
     softSkills: {
       title: "Habilidades Blandas",
-      subtitle: "Competencias interpersonales y de gestión que potencian mi trabajo",
+      subtitle: "Cómo trabajo con equipos y clientes",
       items: [
         { name: "Comunicación efectiva", icon: MessageCircle },
         { name: "Adaptabilidad", icon: RefreshCw },
@@ -172,52 +222,34 @@ export const translations = {
     },
     education: {
       title: "Educación y Certificaciones",
-      subtitle: "Formación académica y certificaciones",
+      subtitle: "Formación técnica y certificación en Scrum",
       items: [
-        {
-          title: "Diseño y Desarrollo de Software",
-          institution: "TECSUP",
-          type: "Carrera Técnica"
-        },
-        {
-          title: "Scrum Master",
-          institution: "ScrumAcademy",
-          type: "Certificación"
-        }
+        { title: "Diseño y Desarrollo de Software", institution: "TECSUP", type: "Carrera Técnica", year: "2023" },
+        { title: "Scrum Master", institution: "ScrumAcademy", type: "Certificación", year: "2024" }
       ],
       volunteeringTitle: "Voluntariados",
-      volunteeringSubtitle: "Impacto en la comunidad",
+      volunteeringSubtitle: "Tecnología y cultura al servicio de la comunidad",
       volunteeringItems: [
-        {
-          title: "FLIT Arequipa",
-          description: "Festival de Literatura y Tecnología"
-        },
-        {
-          title: "Patrimonio Game Jam",
-          institution: "Ministerio de Cultura",
-          description: "Desarrollo de videojuegos educativos"
-        }
-      ],
-      quote: "El conocimiento compartido es el que más crece"
+        { title: "FLIT Arequipa", institution: "", description: "Festival de Literatura y Tecnología", year: "2025" },
+        { title: "Patrimonio Game Jam", institution: "Ministerio de Cultura", description: "Desarrollo de videojuegos educativos", year: "2024" }
+      ]
     },
     contact: {
       title: "Contacto",
-      subtitle: "¡Conectemos y creemos algo increíble juntos!",
+      subtitle: "¿Tienes un proyecto en mente? Escríbeme.",
       email: "Email",
       phone: "Teléfono",
       location: "Ubicación",
       locationValue: "Arequipa, Perú"
     },
     footer: {
-      tagline: "Full Stack Developer • Project Manager",
-      madeWith: "Hecho con"
+      tagline: "Desarrollador Full Stack · Gestor de Proyectos"
     },
     github: {
       title: "GitHub",
-      subtitle: "Mi actividad y proyectos de código abierto",
-      bio: "Desarrollador Full Stack apasionado, desde Perú 🇵🇪",
+      subtitle: "Mi actividad y repositorios públicos",
+      bio: "Construyo software con arquitectura hexagonal y código limpio.",
       viewProfile: "Ver perfil",
-      fullProfile: "Ver mi perfil completo en GitHub",
       orgLabel: "Organización",
       statsLabels: {
         repos: "Repositorios",
@@ -226,15 +258,15 @@ export const translations = {
       },
       aboutTitle: "Sobre mí",
       about: [
-        "Desde Perú 🇵🇪",
-        "Apasionado por el desarrollo Full Stack, la IA y la nube",
-        "Siempre aprendiendo nuevos frameworks, lenguajes y herramientas",
+        "Arequipa, Perú 🇵🇪",
+        "Full Stack con interés en IA y la nube",
+        "En constante aprendizaje de frameworks, lenguajes y herramientas",
         "Gamer de corazón y entusiasta de la tecnología"
       ],
       reposTitle: "Repositorios destacados",
       repos: [
         { name: "CodeLink", desc: "Red social para desarrolladores" },
-        { name: "Dots", desc: "Plataforma web de aprendizaje" },
+        { name: "Dot-s", desc: "Plataforma web de aprendizaje" },
         { name: "Gasteko-finance", desc: "" }
       ]
     }
@@ -262,7 +294,7 @@ export const translations = {
     profile: {
       title: "Professional Profile",
       subtitle: "About me",
-      description: "Software Design and Development professional, specialized in Full Stack development and technology project management. I lead projects end to end —web, enterprise systems, and cross-platform mobile— ensuring quality and on-time delivery with agile methodologies like Scrum and Kanban.",
+      description: "Full Stack developer and project manager with a background in Software Design and Development. I build web applications, enterprise systems and mobile apps, from backend to interface, using hexagonal architecture and clean code. I also lead projects with Scrum and Kanban to deliver quality work on time.",
       stats: {
         fullstack: { title: "Full Stack", subtitle: "Development" },
         leader: { title: "Leader", subtitle: "Projects" },
@@ -270,13 +302,41 @@ export const translations = {
       }
     },
     experience: {
-      title: "Professional Trajectory",
-      subtitle: "Featured projects grouped by specialty",
-      current: "Currently",
+      title: "Professional Experience",
+      subtitle: "Projects I have designed, built or led",
       detailsSoon: "Details coming soon",
-      aboutLabel: "About the project",
       visitProject: "Visit project",
       items: [
+        {
+          title: "Full Stack Developer",
+          project: "Encuentro Anual PIU",
+          company: "Web application",
+          period: "",
+          images: [],
+          link: "https://jamilturpo.entiendepiu.com/",
+          tech: ["Hexagonal"],
+          description: "Platform for the Encuentro Anual PIU, built end to end: from interface design to the backend.",
+          highlights: [
+            "Interface and user experience design",
+            "Frontend component optimization",
+            "Complete backend using hexagonal architecture"
+          ]
+        },
+        {
+          title: "Full Stack Developer",
+          project: "Zefiron",
+          company: "NAVIA",
+          period: "January 2026 – June 2026",
+          images: ["/zefiron/welcome.webp"],
+          link: "https://zefiron.com/es",
+          tech: ["Flutter", "FastAPI", "Hexagonal"],
+          description: "AI-powered real estate platform that brings together CRM, project management, sales pipeline and collections for real estate companies.",
+          highlights: [
+            "Cross-platform app in Flutter with hexagonal architecture",
+            "FastAPI backend with hexagonal architecture",
+            "6 months of continuous development with clean, scalable code"
+          ]
+        },
         {
           title: "Frontend Developer",
           project: "Alianza Valorem",
@@ -284,11 +344,12 @@ export const translations = {
           period: "February 2026 – March 2026",
           images: ["/alianzavalorem/welcome.webp", "/alianzavalorem/logo.webp"],
           link: "https://alianzavalorem.com/",
-          description: "I designed and built the entire Alianza Valorem landing page, from the UI and user experience to the code, using Astro to deliver a modern, fast, SEO-optimized site.",
+          tech: ["Astro", "TailwindCSS"],
+          description: "Alianza Valorem landing page, designed and built from scratch with Astro: modern, fast and SEO-optimized.",
           highlights: [
-            "End-to-end landing design and development",
-            "Modern, responsive interface",
-            "Performance and SEO optimized with Astro"
+            "Interface design and complete site development",
+            "Responsive, fast-loading site",
+            "SEO and performance optimized with Astro"
           ]
         },
         {
@@ -298,11 +359,12 @@ export const translations = {
           period: "October 2025 – November 2025",
           images: ["/ruedaproblemas/welcome.webp", "/ruedaproblemas/logo.svg"],
           link: "https://ruedadeproblemas.pe/",
-          description: "A platform connecting real problems from the productive, government and social sectors with research and innovation capabilities to generate R&D&I projects with funding potential. I led planning, meetings, requirements, and sprint and review management.",
+          tech: ["Management", "Analysis", "Scrum"],
+          description: "A platform connecting real problems from the productive, government and social sectors with research and innovation capabilities, to generate R&D&I projects with funding potential.",
           highlights: [
-            "Canon Fund Allocation Strategy",
-            "Requirements gathering and client meetings",
-            "Validation of final deliverables"
+            "Canon Fund allocation",
+            "Planning, requirements and client meetings",
+            "Sprint and review management, and validation of deliverables"
           ]
         },
         {
@@ -312,11 +374,12 @@ export const translations = {
           period: "July 2025 – September 2025",
           images: ["/sosensenas/movil.webp", "/sosensenas/logo.svg"],
           link: "https://sosenseñas.com",
-          description: "Android app for sign-language recognition aimed at deaf-signing pregnant women, supporting their communication.",
+          tech: ["Android", "Kotlin", "ML"],
+          description: "Android app that recognizes sign language to support communication for deaf-signing pregnant women.",
           highlights: [
-            "Sign-language recognition",
-            "Aimed at deaf-signing pregnant women",
-            "Native Android development"
+            "Native Android development with Kotlin",
+            "Sign-language recognition with ML",
+            "Focus on accessibility and inclusion"
           ]
         },
         {
@@ -326,11 +389,12 @@ export const translations = {
           period: "June 2025 – January 2026",
           images: ["/dots/dashboard.webp", "/dots/logo.webp"],
           link: "https://devdotfrontend.onrender.com/",
-          description: "A web learning platform focused on strengthening recognition of NFPA 704 diamonds. I led team organization, work planning, priority setting, and deliverable follow-up throughout product development.",
+          tech: ["React", "Node.js", "MongoDB", "Scrum"],
+          description: "A web learning platform to strengthen recognition of NFPA 704 diamonds, built by a team working with Scrum.",
           highlights: [
-            "Coordinating a multidisciplinary team and task allocation",
-            "Planning sprints, priorities, and progress follow-up",
-            "Validating product functionality and aligning deliverables"
+            "Coordination of a multidisciplinary team and task allocation",
+            "Sprint planning, priorities and progress tracking",
+            "Functional validation and alignment of deliverables"
           ]
         },
         {
@@ -340,23 +404,25 @@ export const translations = {
           period: "June 2025 – August 2025",
           images: ["/codelink/content.webp", "/codelink/login.webp"],
           link: "",
+          tech: ["iOS", "SwiftUI", "Firebase"],
           description: "A social network for programmers: ask anyone in the world for coding help, through public posts or private messages.",
           highlights: [
             "Authentication and dynamic profiles",
-            "Real-time services (Chat/Feeds)",
-            "Mobile UX focused design"
+            "Real-time chat and feed",
+            "Design focused on the mobile experience"
           ]
         },
         {
           title: ".NET Developer",
           project: "Juanjo",
-          company: "Archery & Lenguage School",
+          company: "Archery & Language School",
           period: "September 2024 – December 2024",
           images: [],
           link: "",
-          description: "A booking system for archery courses: manages schedules, students per instructor, and automated time slots.",
+          tech: [".NET", "Clean Arch", "C#", "Swagger"],
+          description: "A booking system for archery courses: manages schedules, the number of students per instructor and automated time slots.",
           highlights: [
-            "Implementation of Hexagonal Architecture",
+            "Implementation of hexagonal architecture",
             "Optimization of student registration",
             "Automation of administrative management"
           ]
@@ -368,10 +434,11 @@ export const translations = {
           period: "April 2024 – August 2024",
           images: [],
           link: "",
-          description: "A risk manager for a factory: logs problems and deficiencies and routes safety improvement requests to the responsible safety officers.",
+          tech: ["PHP", "Laravel", "MySQL"],
+          description: "A system for a factory that logs problems and deficiencies, and routes safety improvement requests to the people responsible.",
           highlights: [
-            "Development of comprehensive risk management system",
-            "Implementation of data validation and security flows",
+            "Comprehensive risk management system",
+            "Data validation and security flows",
             "Coordination with internal and external auditors"
           ]
         }
@@ -379,19 +446,27 @@ export const translations = {
     },
     skills: {
       title: "Technical Skills",
-      subtitle: "Tech stack and development tools I master",
+      subtitle: "Technologies and tools I use to build products, from frontend to backend",
       categories: {
         frontend: "Frontend",
         backend: "Backend",
         database: "Databases",
-        mobile: "Mobile",
         tools: "Tools",
-        methodologies: "Methodologies"
+        methodologies: "Methodologies & Architecture",
+        mobile: "Mobile & Cross-platform"
+      },
+      methods: {
+        scrum: "Scrum",
+        sprints: "Sprints",
+        kanban: "Kanban",
+        hexagonal: "Hexagonal",
+        projectManagement: "Project Management",
+        requirements: "Requirements"
       }
     },
     softSkills: {
       title: "Soft Skills",
-      subtitle: "Interpersonal and management skills that empower my work",
+      subtitle: "How I work with teams and clients",
       items: [
         { name: "Effective Communication", icon: MessageCircle },
         { name: "Adaptability", icon: RefreshCw },
@@ -406,52 +481,34 @@ export const translations = {
     },
     education: {
       title: "Education & Certifications",
-      subtitle: "Academic background and certifications",
+      subtitle: "Technical education and Scrum certification",
       items: [
-        {
-          title: "Software Design and Development",
-          institution: "TECSUP",
-          type: "Technical Degree"
-        },
-        {
-          title: "Scrum Master",
-          institution: "ScrumAcademy",
-          type: "Certification"
-        }
+        { title: "Software Design and Development", institution: "TECSUP", type: "Technical Degree", year: "2023" },
+        { title: "Scrum Master", institution: "ScrumAcademy", type: "Certification", year: "2024" }
       ],
       volunteeringTitle: "Volunteering",
-      volunteeringSubtitle: "Community Impact",
+      volunteeringSubtitle: "Technology and culture serving the community",
       volunteeringItems: [
-        {
-          title: "FLIT Arequipa",
-          description: "Literature and Technology Festival"
-        },
-        {
-          title: "Heritage Game Jam",
-          institution: "Ministry of Culture",
-          description: "Educational video game development"
-        }
-      ],
-      quote: "Shared knowledge grows the most"
+        { title: "FLIT Arequipa", institution: "", description: "Literature and Technology Festival", year: "2025" },
+        { title: "Heritage Game Jam", institution: "Ministry of Culture", description: "Educational video game development", year: "2024" }
+      ]
     },
     contact: {
       title: "Contact",
-      subtitle: "Let's connect and create something amazing together!",
+      subtitle: "Have a project in mind? Get in touch.",
       email: "Email",
       phone: "Phone",
       location: "Location",
       locationValue: "Arequipa, Peru"
     },
     footer: {
-      tagline: "Full Stack Developer • Project Manager",
-      madeWith: "Made with"
+      tagline: "Full Stack Developer · Project Manager"
     },
     github: {
       title: "GitHub",
-      subtitle: "My open-source activity and projects",
-      bio: "Passionate Full Stack developer, from Peru 🇵🇪",
+      subtitle: "My activity and public repositories",
+      bio: "I build software with hexagonal architecture and clean code.",
       viewProfile: "View profile",
-      fullProfile: "View my full GitHub profile",
       orgLabel: "Organization",
       statsLabels: {
         repos: "Repositories",
@@ -460,10 +517,10 @@ export const translations = {
       },
       aboutTitle: "About me",
       about: [
-        "From Peru 🇵🇪",
-        "Passionate about Full Stack development, AI and Cloud",
-        "Always learning new frameworks, languages, and tools",
-        "Gamer at heart & tech enthusiast"
+        "Based in Arequipa, Peru 🇵🇪",
+        "Full Stack developer interested in AI and the cloud",
+        "Always learning new frameworks, languages and tools",
+        "Gamer at heart and tech enthusiast"
       ],
       reposTitle: "Featured repositories",
       repos: [
